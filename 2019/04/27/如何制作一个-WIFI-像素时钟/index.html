@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="如何制作一个 WIFI 像素时钟 第一次看到 Lametric 就是心动的感觉，但是无奈太贵（国外200刀，淘宝要卖到1500-2000人民币），所以一直没舍得买，直到看到了 AWTRIX 2.0 这个项目。花很少的钱就能自己DIY一个 WIFI 像素时钟。 看到 AWTRIX 论坛晒的作品都超级棒，于是我就上路了。（上图 Lametric，下图 AWTRIX 论坛网友晒的作品）  前言做这个东西">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何制作一个 WIFI 像素时钟">
+<meta property="og:url" content="http://qust.me/2019/04/27/如何制作一个-WIFI-像素时钟/index.html">
+<meta property="og:site_name" content="酱紫表">
+<meta property="og:description" content="如何制作一个 WIFI 像素时钟 第一次看到 Lametric 就是心动的感觉，但是无奈太贵（国外200刀，淘宝要卖到1500-2000人民币），所以一直没舍得买，直到看到了 AWTRIX 2.0 这个项目。花很少的钱就能自己DIY一个 WIFI 像素时钟。 看到 AWTRIX 论坛晒的作品都超级棒，于是我就上路了。（上图 Lametric，下图 AWTRIX 论坛网友晒的作品）  前言做这个东西">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://sebs.club/hexoBlog/71axk2oxHML._SL1500_.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/1546809125-114840-img-3148.jpeg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_19-09-17.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_19-57-08.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_20-15-10.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_20-19-34.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_20-25-36.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_20-25-45.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_20-41-18.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/1554582575-751124-photo-2019-04-06-22-27-41.jpeg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/1551817945-225363-20190305-204941-01.jpeg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/1551378924-215274-image.jpeg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/ser.png">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-54.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-41.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-46.jpg">
+<meta property="og:image" content="https://sebs.club/hexoBlog/sebs.jpg">
+<meta property="og:updated_time" content="2019-04-27T13:47:45.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何制作一个 WIFI 像素时钟">
+<meta name="twitter:description" content="如何制作一个 WIFI 像素时钟 第一次看到 Lametric 就是心动的感觉，但是无奈太贵（国外200刀，淘宝要卖到1500-2000人民币），所以一直没舍得买，直到看到了 AWTRIX 2.0 这个项目。花很少的钱就能自己DIY一个 WIFI 像素时钟。 看到 AWTRIX 论坛晒的作品都超级棒，于是我就上路了。（上图 Lametric，下图 AWTRIX 论坛网友晒的作品）  前言做这个东西">
+<meta name="twitter:image" content="https://sebs.club/hexoBlog/71axk2oxHML._SL1500_.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="酱紫表" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://qust.me/2019/04/27/如何制作一个-WIFI-像素时钟/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>如何制作一个 WIFI 像素时钟 | 酱紫表</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">酱紫表</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Coder's Blog</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/04/27/如何制作一个-WIFI-像素时钟/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pengchujin">
+      <meta itemprop="description" content="复杂的世界里，有你就足够了、">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="酱紫表">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何制作一个 WIFI 像素时钟
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-27 21:46:43 / 修改时间：21:47:45" itemprop="dateCreated datePublished" datetime="2019-04-27T21:46:43+08:00">2019-04-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="如何制作一个-WIFI-像素时钟"><a href="#如何制作一个-WIFI-像素时钟" class="headerlink" title="如何制作一个 WIFI 像素时钟"></a>如何制作一个 WIFI 像素时钟</h1><p><img src="https://sebs.club/hexoBlog/71axk2oxHML._SL1500_.jpg" alt></p>
+<p>第一次看到 Lametric 就是心动的感觉，但是无奈太贵（国外200刀，淘宝要卖到1500-2000人民币），所以一直没舍得买，直到看到了 AWTRIX 2.0 这个项目。花很少的钱就能自己DIY一个 WIFI 像素时钟。 看到 AWTRIX 论坛晒的作品都超级棒，于是我就上路了。（上图 Lametric，下图 AWTRIX 论坛网友晒的作品）</p>
+<p><img src="https://sebs.club/hexoBlog/1546809125-114840-img-3148.jpeg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>做这个东西其实不难，但是你得稍微有点动手能力。你至少得知道 Linux 是啥或者会复制粘贴命令。你至少得能看一点点英文文档。不需要焊接、不需要硬件知识，如果还想做就看看我写的教程吧。</p>
+<h2 id="材料准备"><a href="#材料准备" class="headerlink" title="材料准备"></a>材料准备</h2><ol>
+<li>WS2812B 全彩 8*32 全彩可编程像素软屏（115元淘宝）</li>
+<li>ESP8266 WIFI 模块 CP2102 ESP-12E （27.83元 淘宝）</li>
+<li>杜邦线 公对母（一头插一头被插）（1-2元可以和 WIFI 模块一起买、短的就行 ）</li>
+<li>3D 打印光栅（70元左右，这个后面会讲）记得打印两个素材里也标注了×2！</li>
+<li>A3 白纸一张（A4太小）</li>
+<li>micro usb 线</li>
+<li>树莓派（买斐讯便宜的盒子刷 Linux 也是可以的）、或长期开机的电脑Nas然路由等、或者云服务器、或者手机。都可以</li>
+<li>胶水、剪刀等工具</li>
+</ol>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_19-09-17.jpg" alt></p>
+<p>这里我自己的杜邦线买错了！（害我插错了口，折腾大半天，记得买公对母的），这里没有任何广告，只要东西对买便宜的就行。</p>
+<p>3D 打印的光栅素材在这（<a href="https://www.thingiverse.com/thing:2791276），有钱的可以全打印了（我只打印了光栅、后盖打印比较贵、前盖也可以不要，有钱还是全打印把方便点）。这里一定要注意打印材料别选透光的，我就选错了=" target="_blank" rel="noopener">https://www.thingiverse.com/thing:2791276），有钱的可以全打印了（我只打印了光栅、后盖打印比较贵、前盖也可以不要，有钱还是全打印把方便点）。这里一定要注意打印材料别选透光的，我就选错了=</a> = ，导致效果差很多。国内有很多3D打印平台，上传下STL文件就能打印，很方便。速加网、未来工场、云工厂、魔猴等等。（我未来工厂打印的、纯属名字好听，相对便宜）</p>
+<h2 id="安装-AWTRIX-2-0-服务端"><a href="#安装-AWTRIX-2-0-服务端" class="headerlink" title="安装 AWTRIX 2.0 服务端"></a>安装 AWTRIX 2.0 服务端</h2><p>官方的文档：<a href="https://docs.blueforcer.de/#/v2/" target="_blank" rel="noopener">https://docs.blueforcer.de/#/v2/</a> </p>
+<p>服务端我装过三次很简单，复制粘贴下命令就行了。</p>
+<ul>
+<li><p>设置时区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-timezone 'Asia/Shanghai'</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装JAVA</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install oracle-java8-jdk</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载 AWTRIX 服务端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/local/awtrix</span><br><span class="line">cd /usr/local/awtrix</span><br><span class="line">sudo wget https://blueforcer.de/downloads/awtrix.jar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建自动启动程序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/awtrix.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>粘贴这个</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description = AWTRIX Service</span><br><span class="line">After network.target = awtrix.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type = forking</span><br><span class="line">WorkingDirectory =/usr/local/awtrix</span><br><span class="line">ExecStart = /usr/local/bin/awtrix.sh start</span><br><span class="line">ExecStop = /usr/local/bin/awtrix.sh stop</span><br><span class="line">ExecReload = /usr/local/bin/awtrix.sh reload</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建启动脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /usr/local/bin/awtrix.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>粘贴这个</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line">SERVICE_NAME=awtrix</span><br><span class="line">PATH_TO_JAR=/usr/local/awtrix/awtrix.jar</span><br><span class="line">PID_PATH_NAME=/tmp/awtrix-pid</span><br><span class="line">case $1 in</span><br><span class="line">    start)</span><br><span class="line">        echo "Starting $SERVICE_NAME ..."</span><br><span class="line">        if [ ! -f $PID_PATH_NAME ]; then</span><br><span class="line">            sudo nohup java -jar $PATH_TO_JAR /tmp 2&gt;&gt; /dev/null &gt;&gt; /dev/null &amp;</span><br><span class="line">                        echo $! &gt; $PID_PATH_NAME</span><br><span class="line">            echo "$SERVICE_NAME started ..."</span><br><span class="line">        else</span><br><span class="line">            echo "$SERVICE_NAME is already running ..."</span><br><span class="line">        fi</span><br><span class="line">    ;;</span><br><span class="line">    stop)</span><br><span class="line">        if [ -f $PID_PATH_NAME ]; then</span><br><span class="line">            PID=$(cat $PID_PATH_NAME);</span><br><span class="line">            echo "$SERVICE_NAME stoping ..."</span><br><span class="line">            kill $PID;</span><br><span class="line">            echo "$SERVICE_NAME stopped ..."</span><br><span class="line">            rm $PID_PATH_NAME</span><br><span class="line">        else</span><br><span class="line">            echo "$SERVICE_NAME is not running ..."</span><br><span class="line">        fi</span><br><span class="line">    ;;</span><br><span class="line">    restart)</span><br><span class="line">        if [ -f $PID_PATH_NAME ]; then</span><br><span class="line">            PID=$(cat $PID_PATH_NAME);</span><br><span class="line">            echo "$SERVICE_NAME stopping ...";</span><br><span class="line">            kill $PID;</span><br><span class="line">            echo "$SERVICE_NAME stopped ...";</span><br><span class="line">            rm $PID_PATH_NAME</span><br><span class="line">            echo "$SERVICE_NAME starting ..."</span><br><span class="line">            sudo nohup java -jar $PATH_TO_JAR /tmp 2&gt;&gt; /dev/null &gt;&gt; /dev/null &amp;</span><br><span class="line">                        echo $! &gt; $PID_PATH_NAME</span><br><span class="line">            echo "$SERVICE_NAME started ..."</span><br><span class="line">        else</span><br><span class="line">            echo "$SERVICE_NAME is not running ..."</span><br><span class="line">        fi</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/awtrix.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试、启动、重启、停止</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/bin/./awtrix.sh start</span><br><span class="line"></span><br><span class="line">sudo /usr/local/bin/./awtrix.sh stop</span><br><span class="line"></span><br><span class="line">sudo /usr/local/bin/./awtrix.sh restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启服务，然后让其后台运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable awtrix</span><br><span class="line"></span><br><span class="line">sudo systemctl start awtrix.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新脚本（有更新才需要更新）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br><span class="line">cd /usr/local/awtrix</span><br><span class="line">systemctl stop awtrix.service</span><br><span class="line">wget -N awtrix.jar https://blueforcer.de/downloads/awtrix.jar</span><br><span class="line">systemctl start awtrix.service</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>官方文档还有安卓手机上安装服务端的教程，可以自行去看。</p>
+<p>安装好后浏览器打开这个服务端的ip，然后端口默认都是7000，就能看见管理后台了。（这时候提示客户端没连接是正常的）</p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_19-57-08.jpg" alt></p>
+<h2 id="客户端固件刷写"><a href="#客户端固件刷写" class="headerlink" title="客户端固件刷写"></a>客户端固件刷写</h2><p>我这里测试了 Linux 和 Win 平台都是不需要单独安装驱动的、Mac驱动可以参考这个 <a href="http://rossbates.com/2016/01/30/getting-started-esp8266-osx/" target="_blank" rel="noopener">http://rossbates.com/2016/01/30/getting-started-esp8266-osx/</a></p>
+<ul>
+<li><p>安装好  Visual Studio Code，然后下载 <a href="https://github.com/awtrix/AWTRIX2.0-Controller" target="_blank" rel="noopener">https://github.com/awtrix/AWTRIX2.0-Controller</a> 这个后用  Visual Studio Code 打开。</p>
+</li>
+<li><p>打开根目录下<strong>awtrix-conf.h</strong> 文件， 修改 WIFI，和服务器设置。</p>
+<p>ssid（填写wifi名）</p>
+<p>password （填写wifi密码）</p>
+<p>awtrix_server 填写自己 awtrix 服务器的 IP（不需要填端口）    <img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-15-10.jpg" alt></p>
+</li>
+<li><p>Visual Studio Code 里安装 Platform.IO 插件，超级无敌方便。（Linux下会自己安装）</p>
+<p>usb 插上 ESP8266 后点 Devices 应该能看到你的设备，如果找不到，可以重启下 VS Code 或者查看插件是否安装好、usb 线等。</p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-19-34.jpg" alt></p>
+</li>
+<li><p>USB插上设备（ESP8266），点击箭头刷写固件就OK。</p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-25-36.jpg" alt></p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-25-45.jpg" alt></p>
+</li>
+</ul>
+<p>刷写好后 ESP8266 插上电后就能连接上WIFI了了。这时你可以去路由器后台，或者你的 AWTRIX 服务端查看检查是否都正确连接了。（路由器后台设备的名字应该是 ESP 开头）</p>
+<h2 id="组装连接和装饰"><a href="#组装连接和装饰" class="headerlink" title="组装连接和装饰"></a>组装连接和装饰</h2><ul>
+<li><p>ESP8266 和像素屏幕用杜邦线连接（记住是接 DIN 的那三个，之前因为买错线接反的我 = =）</p>
+<p>像素屏上的 DIN 接 ESP8266 上的 D2 口</p>
+<p>像素屏 GND 接 ESP8266 的 GND</p>
+<p>像素屏 5V 接 ESP8266 的 3V3（不要问为啥3V3 其实3v的也可以）</p>
+<p>如果你之前的做的是对的，这时应该就已经亮了，显示时间。（没亮也正常，多找找自己哪错了）</p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-41-18.jpg" alt></p>
+</li>
+<li><p>粘贴好两块3D打印的光栅，然后将柔性屏幕贴上去（我是旁边用胶布粘的）</p>
+<p>光栅的作用是让圆的光点变成四方的像素，看起来更大更舒服。</p>
+</li>
+<li><p>将 A4 纸或者其他纸，粘贴到光栅上去，可以用胶棒。</p>
+</li>
+</ul>
+<p>当然组装多样，你可以看自己需求和创意。我在后面直接绑了个大的移动电源。</p>
+<p><strong>AWTRIX 论坛网友有这些创意你可以看下</strong></p>
+<p><img src="https://sebs.club/hexoBlog/1554582575-751124-photo-2019-04-06-22-27-41.jpeg" alt></p>
+<p><img src="https://sebs.club/hexoBlog/1551817945-225363-20190305-204941-01.jpeg" alt></p>
+<p><img src="https://sebs.club/hexoBlog/1551378924-215274-image.jpeg" alt></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>官方文档在这 <a href="https://docs.blueforcer.de/#/v2/，有问题可以多看看。后台操作也很方便。有些" target="_blank" rel="noopener">https://docs.blueforcer.de/#/v2/，有问题可以多看看。后台操作也很方便。有些</a> app 需要绑定账户，或者 API 的 Key。做完这个还是很开心的，我觉得特别酷，以后还可以自己写一些显示的App。</p>
+<p><img src="https://sebs.club/hexoBlog/ser.png" alt></p>
+<p>我做完的样子，看 Youtube 的 follower 数量</p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-54.jpg" alt></p>
+<p>看天气</p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-41.jpg" alt></p>
+<p>看B站粉丝</p>
+<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-46.jpg" alt></p>
+<p>awsl，实在太酷了。后悔3D打印选错了选了透光的材料，看起来差很多。</p>
+<p><strong>感谢@黑影儿TV 的视频和回复，大家也可以看看他在B站的视频，没弄错的话B站粉丝统计是他写的</strong></p>
+<p><strong>最后确保你关注了公众号 </strong></p>
+<p><strong>小塞——Here to the fools who dream</strong></p>
+<p><img src="https://sebs.club/hexoBlog/sebs.jpg" alt></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/20/Netflix-日历订阅——看-Netflix-最棒的姿势/" rel="next" title="Netflix 日历订阅——看 Netflix 最棒的姿势">
+                <i class="fa fa-chevron-left"></i> Netflix 日历订阅——看 Netflix 最棒的姿势
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">pengchujin</p>
+              <p class="site-description motion-element" itemprop="description">复杂的世界里，有你就足够了、</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何制作一个-WIFI-像素时钟"><span class="nav-number">1.</span> <span class="nav-text">如何制作一个 WIFI 像素时钟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#材料准备"><span class="nav-number">1.2.</span> <span class="nav-text">材料准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-AWTRIX-2-0-服务端"><span class="nav-number">1.3.</span> <span class="nav-text">安装 AWTRIX 2.0 服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端固件刷写"><span class="nav-number">1.4.</span> <span class="nav-text">客户端固件刷写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组装连接和装饰"><span class="nav-number">1.5.</span> <span class="nav-text">组装连接和装饰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">pengchujin</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
