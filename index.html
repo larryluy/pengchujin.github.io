@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/04/27/如何制作一个-WIFI-像素时钟/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/a46d7696.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -305,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/27/如何制作一个-WIFI-像素时钟/" itemprop="url">
+                <a class="post-title-link" href="/post/a46d7696.html" itemprop="url">
                   如何制作一个 WIFI 像素时钟
                 </a>
               
@@ -332,12 +332,24 @@
                 
               
 
-              <time title="创建时间：2019-04-27 21:46:43 / 修改时间：22:51:56" itemprop="dateCreated datePublished" datetime="2019-04-27T21:46:43+08:00">2019-04-27</time>
+              <time title="创建时间：2019-04-27 21:46:43" itemprop="dateCreated datePublished" datetime="2019-04-27T21:46:43+08:00">2019-04-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:22:28" itemprop="dateModified" datetime="2019-05-05T19:22:28+08:00">2019-05-05</time>
               
             
           </span>
@@ -371,117 +383,15 @@
 
       
         
-          
-            <h1 id="如何制作一个-WIFI-像素时钟"><a href="#如何制作一个-WIFI-像素时钟" class="headerlink" title="如何制作一个 WIFI 像素时钟"></a>如何制作一个 WIFI 像素时钟</h1><p><img src="https://sebs.club/hexoBlog/71axk2oxHML._SL1500_.jpg" alt></p>
+          <h1 id="如何制作一个-WIFI-像素时钟"><a href="#如何制作一个-WIFI-像素时钟" class="headerlink" title="如何制作一个 WIFI 像素时钟"></a>如何制作一个 WIFI 像素时钟</h1><p><img src="https://sebs.club/hexoBlog/71axk2oxHML._SL1500_.jpg" alt></p>
 <p>第一次看到 Lametric 就是心动的感觉，但是无奈太贵（国外200刀，淘宝要卖到1500-2000人民币），所以一直没舍得买，直到看到了 AWTRIX 2.0 这个项目。花很少的钱就能自己DIY一个 WIFI 像素时钟。 看到 AWTRIX 论坛晒的作品都超级棒，于是我就上路了。（上图 Lametric，下图 AWTRIX 论坛网友晒的作品）</p>
-<p><img src="https://sebs.club/hexoBlog/1546809125-114840-img-3148.jpeg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>做这个东西其实不难，但是你得稍微有点动手能力。你至少得知道 Linux 是啥或者会复制粘贴命令。你至少得能看一点点英文文档。不需要焊接、不需要硬件知识，如果还想做就看看我写的教程吧。</p>
-<h2 id="材料准备"><a href="#材料准备" class="headerlink" title="材料准备"></a>材料准备</h2><ol>
-<li>WS2812B 全彩 8*32 全彩可编程像素软屏（115元淘宝）</li>
-<li>ESP8266 WIFI 模块 CP2102 ESP-12E （27.83元 淘宝）</li>
-<li>杜邦线 公对母（一头插一头被插）（1-2元可以和 WIFI 模块一起买、短的就行 ）</li>
-<li>3D 打印光栅（70元左右，这个后面会讲）记得打印两个素材里也标注了×2！</li>
-<li>A3 白纸一张（A4太小）</li>
-<li>micro usb 线</li>
-<li>树莓派（买斐讯便宜的盒子刷 Linux 也是可以的）、或长期开机的电脑Nas然路由等、或者云服务器、或者手机。都可以</li>
-<li>胶水、剪刀等工具</li>
-</ol>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_19-09-17.jpg" alt></p>
-<p>这里我自己的杜邦线买错了！（害我插错了口，折腾大半天，记得买公对母的），这里没有任何广告，只要东西对买便宜的就行。</p>
-<p>3D 打印的光栅素材在这 <a href="https://www.thingiverse.com/thing:2791276，有钱的可以全打印了（我只打印了光栅、后盖打印比较贵、前盖也可以不要，有钱还是全打印把方便点）。这里一定要注意打印材料别选透光的，我就选错了=" target="_blank" rel="noopener">https://www.thingiverse.com/thing:2791276，有钱的可以全打印了（我只打印了光栅、后盖打印比较贵、前盖也可以不要，有钱还是全打印把方便点）。这里一定要注意打印材料别选透光的，我就选错了=</a> = ，导致效果差很多。国内有很多3D打印平台，上传下STL文件就能打印，很方便。速加网、未来工场、云工厂、魔猴等等。（我未来工厂打印的、纯属名字好听，相对便宜）</p>
-<h2 id="安装-AWTRIX-2-0-服务端"><a href="#安装-AWTRIX-2-0-服务端" class="headerlink" title="安装 AWTRIX 2.0 服务端"></a>安装 AWTRIX 2.0 服务端</h2><p>官方的文档：<a href="https://docs.blueforcer.de/#/v2/" target="_blank" rel="noopener">https://docs.blueforcer.de/#/v2/</a> </p>
-<p>服务端我装过三次很简单，复制粘贴下命令就行了。</p>
-<ul>
-<li><p>设置时区</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-timezone 'Asia/Shanghai'</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装JAVA</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install oracle-java8-jdk</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载 AWTRIX 服务端</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/local/awtrix</span><br><span class="line">cd /usr/local/awtrix</span><br><span class="line">sudo wget https://blueforcer.de/downloads/awtrix.jar</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建自动启动程序</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/awtrix.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>粘贴这个</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description = AWTRIX Service</span><br><span class="line">After network.target = awtrix.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type = forking</span><br><span class="line">WorkingDirectory =/usr/local/awtrix</span><br><span class="line">ExecStart = /usr/local/bin/awtrix.sh start</span><br><span class="line">ExecStop = /usr/local/bin/awtrix.sh stop</span><br><span class="line">ExecReload = /usr/local/bin/awtrix.sh reload</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建启动脚本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /usr/local/bin/awtrix.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>粘贴这个</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line">SERVICE_NAME=awtrix</span><br><span class="line">PATH_TO_JAR=/usr/local/awtrix/awtrix.jar</span><br><span class="line">PID_PATH_NAME=/tmp/awtrix-pid</span><br><span class="line">case $1 in</span><br><span class="line">    start)</span><br><span class="line">        echo "Starting $SERVICE_NAME ..."</span><br><span class="line">        if [ ! -f $PID_PATH_NAME ]; then</span><br><span class="line">            sudo nohup java -jar $PATH_TO_JAR /tmp 2&gt;&gt; /dev/null &gt;&gt; /dev/null &amp;</span><br><span class="line">                        echo $! &gt; $PID_PATH_NAME</span><br><span class="line">            echo "$SERVICE_NAME started ..."</span><br><span class="line">        else</span><br><span class="line">            echo "$SERVICE_NAME is already running ..."</span><br><span class="line">        fi</span><br><span class="line">    ;;</span><br><span class="line">    stop)</span><br><span class="line">        if [ -f $PID_PATH_NAME ]; then</span><br><span class="line">            PID=$(cat $PID_PATH_NAME);</span><br><span class="line">            echo "$SERVICE_NAME stoping ..."</span><br><span class="line">            kill $PID;</span><br><span class="line">            echo "$SERVICE_NAME stopped ..."</span><br><span class="line">            rm $PID_PATH_NAME</span><br><span class="line">        else</span><br><span class="line">            echo "$SERVICE_NAME is not running ..."</span><br><span class="line">        fi</span><br><span class="line">    ;;</span><br><span class="line">    restart)</span><br><span class="line">        if [ -f $PID_PATH_NAME ]; then</span><br><span class="line">            PID=$(cat $PID_PATH_NAME);</span><br><span class="line">            echo "$SERVICE_NAME stopping ...";</span><br><span class="line">            kill $PID;</span><br><span class="line">            echo "$SERVICE_NAME stopped ...";</span><br><span class="line">            rm $PID_PATH_NAME</span><br><span class="line">            echo "$SERVICE_NAME starting ..."</span><br><span class="line">            sudo nohup java -jar $PATH_TO_JAR /tmp 2&gt;&gt; /dev/null &gt;&gt; /dev/null &amp;</span><br><span class="line">                        echo $! &gt; $PID_PATH_NAME</span><br><span class="line">            echo "$SERVICE_NAME started ..."</span><br><span class="line">        else</span><br><span class="line">            echo "$SERVICE_NAME is not running ..."</span><br><span class="line">        fi</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>给权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/awtrix.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试、启动、重启、停止</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/bin/./awtrix.sh start</span><br><span class="line"></span><br><span class="line">sudo /usr/local/bin/./awtrix.sh stop</span><br><span class="line"></span><br><span class="line">sudo /usr/local/bin/./awtrix.sh restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>开启服务，然后让其后台运行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable awtrix</span><br><span class="line"></span><br><span class="line">sudo systemctl start awtrix.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新脚本（有更新才需要更新）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br><span class="line">cd /usr/local/awtrix</span><br><span class="line">systemctl stop awtrix.service</span><br><span class="line">wget -N awtrix.jar https://blueforcer.de/downloads/awtrix.jar</span><br><span class="line">systemctl start awtrix.service</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>官方文档还有安卓手机上安装服务端的教程，可以自行去看。</p>
-<p>安装好后浏览器打开这个服务端的ip，然后端口默认都是7000，就能看见管理后台了。（这时候提示客户端没连接是正常的）</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_19-57-08.jpg" alt></p>
-<h2 id="客户端固件刷写"><a href="#客户端固件刷写" class="headerlink" title="客户端固件刷写"></a>客户端固件刷写</h2><p>我这里测试了 Linux 和 Win 平台都是不需要单独安装驱动的、Mac驱动可以参考这个 <a href="http://rossbates.com/2016/01/30/getting-started-esp8266-osx/" target="_blank" rel="noopener">http://rossbates.com/2016/01/30/getting-started-esp8266-osx/</a></p>
-<ul>
-<li><p>安装好  Visual Studio Code，然后下载 <a href="https://github.com/awtrix/AWTRIX2.0-Controller" target="_blank" rel="noopener">https://github.com/awtrix/AWTRIX2.0-Controller</a> 这个后用  Visual Studio Code 打开。</p>
-</li>
-<li><p>打开根目录下<strong>awtrix-conf.h</strong> 文件， 修改 WIFI，和服务器设置。</p>
-<p>ssid（填写wifi名）</p>
-<p>password （填写wifi密码）</p>
-<p>awtrix_server 填写自己 awtrix 服务器的 IP（不需要填端口）    <img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-15-10.jpg" alt></p>
-</li>
-<li><p>Visual Studio Code 里安装 Platform.IO 插件，超级无敌方便。（Linux下会自己安装）</p>
-<p>usb 插上 ESP8266 后点 Devices 应该能看到你的设备，如果找不到，可以重启下 VS Code 或者查看插件是否安装好、usb 线等。</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-19-34.jpg" alt></p>
-</li>
-<li><p>USB插上设备（ESP8266），点击箭头刷写固件就OK。</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-25-36.jpg" alt></p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-25-45.jpg" alt></p>
-</li>
-</ul>
-<p>刷写好后 ESP8266 插上电后就能连接上WIFI了了。这时你可以去路由器后台，或者你的 AWTRIX 服务端查看检查是否都正确连接了。（路由器后台设备的名字应该是 ESP 开头）</p>
-<h2 id="组装连接和装饰"><a href="#组装连接和装饰" class="headerlink" title="组装连接和装饰"></a>组装连接和装饰</h2><ul>
-<li><p>ESP8266 和像素屏幕用杜邦线连接（记住是接 DIN 的那三个，之前因为买错线接反的我 = =）</p>
-<p>像素屏上的 DIN 接 ESP8266 上的 D2 口</p>
-<p>像素屏 GND 接 ESP8266 的 GND</p>
-<p>像素屏 5V 接 ESP8266 的 3V3（不要问为啥3V3 其实3v的也可以）</p>
-<p>如果你之前的做的是对的，这时应该就已经亮了，显示时间。（没亮也正常，多找找自己哪错了）</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_20-41-18.jpg" alt></p>
-</li>
-<li><p>粘贴好两块3D打印的光栅，然后将柔性屏幕贴上去（我是旁边用胶布粘的）</p>
-<p>光栅的作用是让圆的光点变成四方的像素，看起来更大更舒服。</p>
-</li>
-<li><p>将 A4 纸或者其他纸，粘贴到光栅上去，可以用胶棒。</p>
-</li>
-</ul>
-<p>当然组装多样，你可以看自己需求和创意。我在后面直接绑了个大的移动电源。</p>
-<p><strong>AWTRIX 论坛网友有这些创意你可以看下</strong></p>
-<p><img src="https://sebs.club/hexoBlog/1554582575-751124-photo-2019-04-06-22-27-41.jpeg" alt></p>
-<p><img src="https://sebs.club/hexoBlog/1551817945-225363-20190305-204941-01.jpeg" alt></p>
-<p><img src="https://sebs.club/hexoBlog/1551378924-215274-image.jpeg" alt></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>官方文档在这 <a href="https://docs.blueforcer.de/#/v2/，有问题可以多看看。后台操作也很方便。有些" target="_blank" rel="noopener">https://docs.blueforcer.de/#/v2/，有问题可以多看看。后台操作也很方便。有些</a> app 需要绑定账户，或者 API 的 Key。做完这个还是很开心的，我觉得特别酷，以后还可以自己写一些显示的App。</p>
-<p><img src="https://sebs.club/hexoBlog/ser.png" alt></p>
-<p>我做完的样子，看 Youtube 的 follower 数量</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-54.jpg" alt></p>
-<p>看天气</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-41.jpg" alt></p>
-<p>看B站粉丝</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-04-27_21-10-46.jpg" alt></p>
-<p>awsl，实在太酷了。后悔3D打印选错了选了透光的材料，看起来差很多。</p>
-<p><strong>感谢@黑影儿TV 的视频和回复，大家也可以看看他在B站的视频，没弄错的话B站粉丝统计是他写的</strong></p>
-<p><strong>最后确保你关注了公众号 </strong></p>
-<p><strong>小塞——Here to the fools who dream</strong></p>
-<p><img src="https://sebs.club/hexoBlog/sebs.jpg" alt></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/a46d7696.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -533,7 +443,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/04/20/Netflix-日历订阅——看-Netflix-最棒的姿势/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/f5f471b7.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -552,7 +462,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/20/Netflix-日历订阅——看-Netflix-最棒的姿势/" itemprop="url">
+                <a class="post-title-link" href="/post/f5f471b7.html" itemprop="url">
                   Netflix 日历订阅——看 Netflix 最棒的姿势
                 </a>
               
@@ -579,12 +489,24 @@
                 
               
 
-              <time title="创建时间：2019-04-20 18:38:44 / 修改时间：18:39:24" itemprop="dateCreated datePublished" datetime="2019-04-20T18:38:44+08:00">2019-04-20</time>
+              <time title="创建时间：2019-04-20 18:38:44" itemprop="dateCreated datePublished" datetime="2019-04-20T18:38:44+08:00">2019-04-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:24:11" itemprop="dateModified" datetime="2019-05-05T19:24:11+08:00">2019-05-05</time>
               
             
           </span>
@@ -618,34 +540,15 @@
 
       
         
-          
-            <h1 id="Netflix日历订阅——看Netflix最棒的姿势"><a href="#Netflix日历订阅——看Netflix最棒的姿势" class="headerlink" title="Netflix日历订阅——看Netflix最棒的姿势"></a>Netflix日历订阅——看Netflix最棒的姿势</h1><p>我思考了挺久：如何更快更迅速的知道 Netflix 的剧集、影片的更新和内容，无论是关注相关的博主还是看 Netflix 的官方 Youtube channel 都不能满足我对内容更新的需求。他们展现的不够及时全面、也不够有逻辑。昨天突然想到日历订阅，这不恰好能满足我的需求，还能非常方便的分享。</p>
+          <h1 id="Netflix日历订阅——看Netflix最棒的姿势"><a href="#Netflix日历订阅——看Netflix最棒的姿势" class="headerlink" title="Netflix日历订阅——看Netflix最棒的姿势"></a>Netflix日历订阅——看Netflix最棒的姿势</h1><p>我思考了挺久：如何更快更迅速的知道 Netflix 的剧集、影片的更新和内容，无论是关注相关的博主还是看 Netflix 的官方 Youtube channel 都不能满足我对内容更新的需求。他们展现的不够及时全面、也不够有逻辑。昨天突然想到日历订阅，这不恰好能满足我的需求，还能非常方便的分享。</p>
 <h2 id="然后我花了一天时间开始做了这个"><a href="#然后我花了一天时间开始做了这个" class="headerlink" title="然后我花了一天时间开始做了这个"></a>然后我花了一天时间开始做了这个</h2><p><img src="https://sebs.club/hexoBlog/net1.jpeg" alt></p>
-<h2 id="电脑上是这样（一个月）"><a href="#电脑上是这样（一个月）" class="headerlink" title="电脑上是这样（一个月）"></a>电脑上是这样（一个月）</h2><p><img src="https://sebs.club/hexoBlog/net2.png" alt></p>
-<p>为了更方便的查看影片剧集的评分、内容、和直接打开就能跳进 Netflix 观看。我在详细内容里添加上了豆瓣和烂番茄的评分的新鲜度和 Netflix 影片链接。</p>
-<p><img src="https://sebs.club/hexoBlog/net3.jpeg" alt></p>
-<h2 id="用起来是这样的"><a href="#用起来是这样的" class="headerlink" title="用起来是这样的"></a>用起来是这样的</h2><p><img src="https://sebs.club/hexoBlog/ezgif-4-1c67c666cac2.gif" alt></p>
-<h2 id="如何添加-Netflix-日历订阅"><a href="#如何添加-Netflix-日历订阅" class="headerlink" title="如何添加 Netflix 日历订阅"></a>如何添加 Netflix 日历订阅</h2><ul>
-<li><p>前提你有谷歌账户（因为我写的是谷歌日历的）</p>
-</li>
-<li><p>在 浏览器中打开 nf.qust.me 即可。<a href="http://nf.qust.me/" target="_blank" rel="noopener">点我</a></p>
-<p><img src="https://sebs.club/hexoBlog/net4.png" alt></p>
-<ul>
-<li><p>点击 Add 或者 添加 你就能订阅到我创建的 Netflix 日历了</p>
-</li>
-<li><p>手机上现在 Google Calendar 即可</p>
-</li>
-<li><p>iOS 的日历，在你登录谷歌账户后也会同步过去：）还是推荐你用谷歌日历。</p>
-<p><img src="https://sebs.club/hexoBlog/net5.jpeg" alt></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>当然除了 Netflix，HBO 等流媒体平台后续也会被加入进来，敬请期待。只要订阅了就能自动同步更新：）</p>
-<p>最后确保你订阅了我的公众号（我还是觉得订阅公众号才给链接这种做法很恶心，所以没这样做）</p>
-<h2 id="小塞——Here-to-the-fools-who-dream"><a href="#小塞——Here-to-the-fools-who-dream" class="headerlink" title="小塞——Here to the fools who dream"></a>小塞——Here to the fools who dream</h2><p><img src="https://sebs.club/hexoBlog/sebs.jpg" alt></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/f5f471b7.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -697,7 +600,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/04/10/HBO-指北-如何第一时间观看《权力的游戏》/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/a97a071c.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -716,7 +619,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/10/HBO-指北-如何第一时间观看《权力的游戏》/" itemprop="url">
+                <a class="post-title-link" href="/post/a97a071c.html" itemprop="url">
                    HBO 指北|如何第一时间观看《权力的游戏》
                 </a>
               
@@ -743,12 +646,24 @@
                 
               
 
-              <time title="创建时间：2019-04-10 00:56:11 / 修改时间：00:57:19" itemprop="dateCreated datePublished" datetime="2019-04-10T00:56:11+08:00">2019-04-10</time>
+              <time title="创建时间：2019-04-10 00:56:11" itemprop="dateCreated datePublished" datetime="2019-04-10T00:56:11+08:00">2019-04-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:24:22" itemprop="dateModified" datetime="2019-05-05T19:24:22+08:00">2019-05-05</time>
               
             
           </span>
@@ -782,58 +697,15 @@
 
       
         
-          
-            <p><img src="https://sebs.club/hexoBlog/hbo1.jpeg" alt="hbo-static-1920"></p>
+          <p><img src="https://sebs.club/hexoBlog/hbo1.jpeg" alt="hbo-static-1920"></p>
 <p>毫无疑问，GOT 《权力的游戏》是 HBO 最出名的一部剧。从2011推出第一季，到今年推出第八季也就是最后一季一定有无数的粉丝关注想第一时间就能看到原版、正版、最新鲜、有中文字幕的剧集。此篇 HBO 指北将会帮助到你。</p>
-<h2 id="关于-HBO-和-HBO-Asia"><a href="#关于-HBO-和-HBO-Asia" class="headerlink" title="关于 HBO 和 HBO Asia"></a>关于 HBO 和 HBO Asia</h2><p>HBO<strong>（</strong>Home Box Office<strong>的<a href="https://zh.wikipedia.org/wiki/%E7%B8%AE%E5%AF%AB" target="_blank" rel="noopener">缩写</a>，直译为</strong>家庭票房）是一个<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B" target="_blank" rel="noopener">美国</a>的<a href="https://zh.wikipedia.org/wiki/%E4%BB%98%E8%B4%B9%E7%94%B5%E8%A7%86" target="_blank" rel="noopener">付费</a><a href="https://zh.wikipedia.org/wiki/%E6%9C%89%E7%BA%BF%E7%94%B5%E8%A7%86" target="_blank" rel="noopener">有线</a>和<a href="https://zh.wikipedia.org/wiki/%E8%A1%9B%E6%98%9F%E9%9B%BB%E8%A6%96" target="_blank" rel="noopener">卫星</a><a href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E8%A6%96%E8%81%AF%E6%92%AD%E7%B6%B2" target="_blank" rel="noopener">联播网</a>，为<a href="https://zh.wikipedia.org/wiki/%E6%99%82%E4%BB%A3%E8%8F%AF%E7%B4%8D" target="_blank" rel="noopener">时代华纳</a>公司所拥有，由Home Box Office公司负责营运（来自wikipedia）。由于 HBO 比较混乱，各大洲服务都是相对独立的，HBO Asia 亚洲也就是相对独立的，由<a href="https://zh.wikipedia.org/wiki/%E6%99%82%E4%BB%A3%E8%8F%AF%E7%B4%8D" target="_blank" rel="noopener">时代华纳</a>和<a href="https://zh.wikipedia.org/wiki/%E6%B4%BE%E6%8B%89%E8%92%99%E5%BD%B1%E6%A5%AD" target="_blank" rel="noopener">派拉蒙影业</a>共同出资成立。当然这些都不是很重要，因为对于用户最重要的是资源、方便、和价格。</p>
-<h3 id="如何选择-HBO-美国-和-HBO-Asia（Now-e）"><a href="#如何选择-HBO-美国-和-HBO-Asia（Now-e）" class="headerlink" title="如何选择 HBO 美国 和 HBO Asia（Now e）"></a>如何选择 HBO 美国 和 HBO Asia（Now e）</h3><p><img src="https://sebs.club/hexoBlog/webwxgetmsgimg.jpeg" alt="93e541eff53b29c58e620f41d158993"></p>
-<p>先说结论，HBO Asia 更便宜更方便而且有中文字幕。都会同步上映最新的 GOT（<strong>北美时间 4.14晚上九点</strong>，即 <strong>北京时间 4.15上午九点</strong>）</p>
-<h5 id="价格"><a href="#价格" class="headerlink" title="价格"></a>价格</h5><ul>
-<li>香港 Now e 价格</li>
-</ul>
-<p><img src="https://sebs.club/hexoBlog/hbo3.jpeg" alt="69627c58093bb7305598451ccb2e055"></p>
-<ul>
-<li>美区 HBO NOW 价格</li>
-</ul>
-<p><img src="https://sebs.club/hexoBlog/hbo4.jpeg" alt="f05403d0baedd6282ba695800e0a108"></p>
-<p>美区的 HBO NOW 的价格是<strong>15美元每月</strong>，而香港的 HBO Now e（包含所有HBO的内容）最低套餐月租套餐价格只要<strong>68港币每月</strong>价格仅仅是一半左右，然后 Now e 的高级版套餐包含了 HBO GO、Now Baogu、Viu的套餐也只要98港币并且能免费试用一个月，美区的免费是一个星期。另外我的 Visa 卡以及 Master 美区HBO付款都被拒了，原因是：不是美帝发的卡。</p>
-<p><img src="https://sebs.club/hexoBlog/hbo5.jpeg" alt="c759aed4a247bb564af7bb75ac248b5"></p>
-<p>当然你肯定担心 Now e 是不是包含了所有 HBO 的内容，答案是肯定的，<strong>全部包含</strong>。</p>
-<h5 id="中文字幕"><a href="#中文字幕" class="headerlink" title="中文字幕"></a>中文字幕</h5><ul>
-<li><p>美区 HBO ——无中文字幕</p>
-<p><img src="https://sebs.club/hexoBlog/hbo6.jpeg" alt></p>
-</li>
-<li><p>亚洲区 HBO Asia——有中文字幕</p>
-</li>
-</ul>
-<p><img src="https://sebs.club/hexoBlog/hbo7.jpeg" alt="7e466f104e00206b542d847ad24847d"></p>
-<p><strong>总结：HBO Now e 更友好、更便宜、有中文字幕、还提供更多的内容。</strong></p>
-<h2 id="订阅-HBO-Now-e"><a href="#订阅-HBO-Now-e" class="headerlink" title="订阅 HBO Now e"></a>订阅 HBO Now e</h2><h5 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h5><ul>
-<li>香港的 IP 代理（得是本地 IP，否则无法观看）</li>
-<li>外币卡 （Master、Visa 等都是可以的，要求不是很严格）</li>
-</ul>
-<p><a href="https://www.nowe.com/choose-plan" target="_blank" rel="noopener"><strong>打开 Now e 订阅即可</strong></a> 推荐订阅 <strong>綜合娛樂組合</strong> 这个套餐，价格没有贵很多每月<strong>98港币</strong>，并且能<strong>免费第一个月</strong>，如果你只想看完 GOT 《权力的游戏》你只需要花1个月的价钱就能看完了。套餐内的除了 HBO GO 的几个资源包也还是不错，对港片、亚洲片感兴趣的也值得一看。</p>
-<p>如果 IP 不符合还会有这种彩蛋提示（John snow 对 sam 说的？）</p>
-<p><img src="https://sebs.club/hexoBlog/hbo9.jpeg" alt></p>
-<h2 id="HBO-的混乱"><a href="#HBO-的混乱" class="headerlink" title="HBO 的混乱"></a>HBO 的混乱</h2><p><img src="https://sebs.club/hexoBlog/hbo8.jpeg" alt="e12c68665adc16d1eb61a1f3f906b04"></p>
-<p>估计你也不相信这是真是4个不同的 App，港区的 App 和美区是分开的，<strong>App store 下载也是</strong>，你只有登录港区的 App Store 才能下载左边的两个。主要原因是几个区的 HBO 几乎是完全独立运营的，香港的应该是卖给了 PCCW，收款方是 PCCW。美国的 HBO 其实是 AT&amp;T 旗下的了，所以我猜这也是 PCCW 拿下 HBO Asia 的原因之一？</p>
-<ul>
-<li>HBO NOW 和 HBO GO 差异不大，主要在于 GO 包含电视节目以及付费方式（国内用户不必考虑）。</li>
-</ul>
-<h2 id="客户端和画质"><a href="#客户端和画质" class="headerlink" title="客户端和画质"></a>客户端和画质</h2><p>HBO 给出的最高画质是高清 1080P，不支持自己调节。</p>
-<p>iOS Android 都有客户端（<strong>港区的得换港区的应用商店</strong>），网页版都支持（无法确定是否都能支持到1080P）。</p>
-<h2 id="HBO-GO-的电视直播"><a href="#HBO-GO-的电视直播" class="headerlink" title="HBO GO 的电视直播"></a>HBO GO 的电视直播</h2><p><strong><a href="http://hboasia.com/HBO/en-hk/schedule" target="_blank" rel="noopener">时间表链接</a></strong></p>
-<p>因为 HBO GO 是包含下面几个 HBO 自己的电视节目，所以有时间表。</p>
-<ul>
-<li><a href="https://www.hbogoasia.hk/#loadtabslivetv-1" target="_blank" rel="noopener">HBO</a></li>
-<li><a href="https://www.hbogoasia.hk/#loadtabslivetv-2" target="_blank" rel="noopener">HBO HITS</a></li>
-<li><a href="https://www.hbogoasia.hk/#loadtabslivetv-3" target="_blank" rel="noopener">HBO FAMILY</a></li>
-<li><a href="https://www.hbogoasia.hk/#loadtabslivetv-4" target="_blank" rel="noopener">HBO SIGNATURE</a></li>
-<li><a href="https://www.hbogoasia.hk/#loadtabslivetv-5" target="_blank" rel="noopener">CINEMAX</a></li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果你想第一时间看到 GOT 《权力的游戏》订阅 HBO Now e 一定值。各个地方细节总能看到 HBO 有种大企业的死板，和不友好。Anyway 有很多剧集还是不错的、Vice、西部世界、GOT。这就够了。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/a97a071c.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -885,7 +757,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/03/28/如何体验更棒的-Netflix-影音/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/4f62cddb.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -904,7 +776,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/28/如何体验更棒的-Netflix-影音/" itemprop="url">
+                <a class="post-title-link" href="/post/4f62cddb.html" itemprop="url">
                   如何体验更棒的 Netflix 影音
                 </a>
               
@@ -931,12 +803,24 @@
                 
               
 
-              <time title="创建时间：2019-03-28 01:46:00 / 修改时间：18:20:13" itemprop="dateCreated datePublished" datetime="2019-03-28T01:46:00+08:00">2019-03-28</time>
+              <time title="创建时间：2019-03-28 01:46:00" itemprop="dateCreated datePublished" datetime="2019-03-28T01:46:00+08:00">2019-03-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:22:47" itemprop="dateModified" datetime="2019-05-05T19:22:47+08:00">2019-05-05</time>
               
             
           </span>
@@ -970,89 +854,15 @@
 
       
         
-          
-            <p>Netflix 同时支持 Dolby Vision、Dolby Atmos、Ultra HD 4K。每一样都是业界顶级，都能带来非常震撼的效果，也是绝大部分平台和流媒体无法提供的。Netflix 绝对能给你提供最棒的影音效果。这篇就由浅入深讲讲 Netflix的音质和画质，以及如何避免踩坑享受到更好的。</p>
+          <p>Netflix 同时支持 Dolby Vision、Dolby Atmos、Ultra HD 4K。每一样都是业界顶级，都能带来非常震撼的效果，也是绝大部分平台和流媒体无法提供的。Netflix 绝对能给你提供最棒的影音效果。这篇就由浅入深讲讲 Netflix的音质和画质，以及如何避免踩坑享受到更好的。</p>
 <p><img src="https://sebs.club/hexoBlog/5b513d75180e0.image_.jpg" alt="banner"></p>
-<h2 id="手机移动端"><a href="#手机移动端" class="headerlink" title="手机移动端"></a>手机移动端</h2><p>先说结论：如果你是除华为（Mate 10、Mate 20、P20、Nova3 ）以及荣耀10以外绝大部分国产手机你看 Netflix 就限制在了 SD 540p 的画质，比如小米 9。与此同时苹果、华为、三星、SONY、LG、以及 Google 等近两年的旗舰都是支持 1080p 高清以及 HDR 甚至 Dolby Vision 的（后面会单独讲）。参考：Netflix <a href="https://help.netflix.com/en/node/23939" target="_blank" rel="noopener">官方支持设备列表链接</a></p>
-<h4 id="如何知道自己手机是否支持看高清版权内容"><a href="#如何知道自己手机是否支持看高清版权内容" class="headerlink" title="如何知道自己手机是否支持看高清版权内容"></a>如何知道自己手机是否支持看高清版权内容</h4><p>如果你是官方列表支持的手机，并且你没有解锁BL，那么肯定是支持的。如果你用的是 iPhone， iPhone 6 Plus 以后的所有 iPhone Plus 以及 iPhone X、XS 和 XS Max 都支持1080p，而 iPhone XR 则是720p。iPhone 8 及以后的所有 iPhone（包括 iPhone XR 这个我验证过了） 都支持 Dolby Vison。参考Netflix <a href="https://help.netflix.com/zh-tw/node/23927" target="_blank" rel="noopener">官方帮助文档</a> 。</p>
-<p>可以特别注意看下不同手机截图的 Love Death&amp;Robots 后面的 Tag 标志，和 DRM Info 的 Widevine Security Level 的等级。L1 为最高等级， L3 最低。如果你感兴趣帮忙统计，可以下载 DRM Info 软件，然后将你的两张截图注明机型发给我 <a href="mailto:pengchujin@hotmail.com" target="_blank" rel="noopener">pengchujin@hotmail.com</a> 十分感谢。</p>
-<ul>
-<li><p>小米 9（Widevine L3 不支持 HD高清 最高是 540p SD 画质），希望小米能赶快解决吧。</p>
-<p><img src="https://sebs.club/hexoBlog/mi_9_netflix.jpg" alt></p>
-</li>
-<li><p>坚果 R1 和 小米9 一样 Widevine L3 不支持 HD高清 最高是 540p SD 画质。</p>
-<p><img src="https://sebs.club/hexoBlog/1850660664_meitu_1.jpg" alt></p>
-</li>
-<li><p>三星 S8（和 Netflix 列表说的一致支持 HD 1080p 高清不支持 HDR 三星从 S9开始支持 HDR ）</p>
-<p>看到 Widevine L1 和预期一致， 支持 HDCP 2.2 所以理论可以串流高清乃至HDR。</p>
-<p><img src="https://sebs.club/hexoBlog/s8.jpg" alt="s8"></p>
-</li>
-<li><p>三星 S10 支持 HD 高清和 HDR 是肯定的，不过 S10 硬件是支持 Dolby Atmos 的这里没有 Tag。当然目前 Netflix 也没有说移动设备支持 Dolby Atmos 的事。但用 S10 的朋友却听出了 Netflix 的声音要更立体很多，因该是因为手机手机打开了Dolby音效，而不是 Netflix 在手机上支持 Dolby Atmos。</p>
-<p><img src="https://sebs.club/hexoBlog/s10.jpg" alt="S10"></p>
-<ul>
-<li><p>这是 iPhone X 的截图，支持 HD 和 Dolby Vison 的。</p>
-<p><img src="https://sebs.club/hexoBlog/webwxgetmsgimg.jpeg" alt></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>这里的内容就比较炸裂有趣的，我买的国产旗舰居然连高清视频都看不了，更别提 HDR 了。</p>
-<p>最主要的原因就出在很多国产手机厂商根本不重视版权这方面，没有做 Widevine DRM L1的支持。DRM 是 Digital Rights Management 即数字版权管理的简称。Widevine 则是 Google 2010年末重金收购的一家数字版权管理软件公司。 理论是这个需要硬件、软件、以及授权（Google 官方说不收费）来实现加密保护版权。Netfilx Hulu等服务商也会在打开内容前先检查设备的 Widevine DRM Level 等级，依据级别来决定客户端所能提供的清晰度。比较惨的是绝大部分国产手机的级别都是 Widevine DRM L3，也就是最低的级别。这个先决条件这就让这些国产手机的画质停留在了 SD 540p。感兴趣 android DRM 可以看看 <a href="https://blog.csdn.net/Innost/article/details/9732847" target="_blank" rel="noopener">DRM in Android</a>、<a href="https://source.android.com/devices/drm#build" target="_blank" rel="noopener">Android 官网 DRM</a>   。</p>
-<p>一加国际化做的很好、但也是在一加6和6T才加入了 Widevine DRM L1的支持（解锁后会掉到 L3）。之前的5和5T因为不支持被骂的不行也才推出了邮寄回售后给补上的方案。解锁一定会掉吗？不是。我的Pixel 解锁了依然是L1。参考 <a href="https://www.xda-developers.com/oneplus-5t-netflix-amazon-prime-video-hd/" target="_blank" rel="noopener">XDA</a></p>
-<p>这样的例子同样也发生在了小米的身上，国际化的产物 PocoPhone F1 同样也是不支持 Widevine DRM L1 被消费者指责，但就在上个月 MIUI 推出的更新解决了这个问题，你只用更新下系统就能补上 L1 的支持来享受高清的流媒体。但直接更新系统就能补上 DRM 这也让人好奇是怎么实现做到的。那么小米9或者其他国产手机是不是也能用过我们指责和要求来推动他们 DRM 的支持？我觉得很有必要，希望国内厂家重视下吧。参考 <a href="https://www.xda-developers.com/xiaomi-poco-f1-widevine-l1-netflix-hd/" target="_blank" rel="noopener">XDA</a></p>
-<h6 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h6><p>使用手机并且是流量数据的情况下，在 App 设定-行动数据流量 设置为最大流量 才能加载最高清的画质。</p>
-<p>如果你是 iPad 或者其他平板可以直接参看上面 Netflix 的帮助，较新的 iPad 都是支持 HD 高清的（可能没有 Tag）。然后最新的 iPad Pro 是支持 Dolby Vision 的。</p>
-<h2 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h2><p>仍然先说结论：Mac 以及 Linux 等除了 Win10 以外的所有的系统最高都是 1080p， 只有在 Win 10 系统并且硬件支持的情况下能看Ultra HD 4K 并且可以支持 HDR 以及 Dolby Atmos。</p>
-<p>如果你是使用 Mac 或者 Linux 你在使用 Chrome 或者 Firefox 浏览器可以观看网页版 Netflix，通过安装浏览器插件可以观看 1080p 高清内容，Dolby 5.1 的声道支持。如果不装插件最高是 720p，你可以通过 安装 Chrome  <a href="https://chrome.google.com/webstore/detail/super-netflix/iakpdiefpdniabbekcbofaanjcpjkloe" target="_blank" rel="noopener">Super Netflix</a> 来查看当前观看内容的清晰度。</p>
-<ul>
-<li><a href="https://chrome.google.com/webstore/detail/netflix-1080p/cankofcoohmbhfpcemhmaaeennfbnmgp" target="_blank" rel="noopener">Chrome 1080P 插件</a></li>
-<li><a href="https://addons.mozilla.org/en-US/firefox/addon/force-1080p-netflix/" target="_blank" rel="noopener">Firefox 1080P 插件</a></li>
-</ul>
-<h4 id="Windows-10-上-Netflix-画质与音质详解"><a href="#Windows-10-上-Netflix-画质与音质详解" class="headerlink" title="Windows 10 上 Netflix 画质与音质详解"></a>Windows 10 上 Netflix 画质与音质详解</h4><p>Windows 10 设备应该是看 Netflix 性价比最高的设备了，默认就支持高清了。在 Netflix UWP 或者 Edge 浏览器中就能观看。看到这肯定会好奇为啥就 Edge 支持高清和4K？因为 Edge 支持微软的 PlayReady DRM ，PlayReady DRM 是收费的，其他桌面的浏览器都只支持 Widevine Security Level3 这也是连高清都不支持的原因了。更详细的可以看 <a href="https://www.quora.com/When-does-Netflix-use-WideVine-DRM-instead-of-Microsoft-PlayReady-DRM" target="_blank" rel="noopener">Quora</a> 上的回答，非常详细具体。</p>
-<p><img src="https://sebs.club/hexoBlog/myce-netflix-ultra-hd.png" alt="4k win"></p>
-<p>如果你想在 Win 10 上看到 Netfix 4K 的内容你需要满足下面这些条件。</p>
-<ul>
-<li>较新的 Win 10 系统和驱动，然后通过 App 或者 Edge 打开。</li>
-<li>4K 60HZ 的显示器并且显示器接口得支持 HDCP 2.2。HDCP 即 High -bandwidth Digital Content Protection 高带宽数字内容保护技术的简称，通过 HDMI 等接口传输的时候内容必须加密。当然 HDCP 是收费的，显示器的硬件厂商得交钱买。买 4K 显示器的时候一定得注意要支持 HDCP 2.2 。</li>
-<li>显卡得是 7代以后的 Intel Cpu（因为7代以后的才支持这种加密格式哦），N 卡是 GTX 1050 以及更新的然后是最新的驱动，A 卡 RX 400 以及以后的系列。理论上支持 Play Ready 3.0 就 OK。可以看看 <a href="https://www.youtube.com/watch?v=E9bsC6-EL4E" target="_blank" rel="noopener">Youtube</a> 这个视频讲解的比较详细。</li>
-<li>然后就是 你 Netflix 是最高级的套餐，网络速度大于 25Mbps ，App 里清晰度设置为了高。</li>
-</ul>
-<h6 id="Tips-按-Ctrl-Shift-Alt-D-可以在-Netflix-App-和-Edge-里查看播放详情。"><a href="#Tips-按-Ctrl-Shift-Alt-D-可以在-Netflix-App-和-Edge-里查看播放详情。" class="headerlink" title="Tips 按 Ctrl+Shift+Alt+D 可以在 Netflix App 和 Edge 里查看播放详情。"></a>Tips 按 Ctrl+Shift+Alt+D 可以在 Netflix App 和 Edge 里查看播放详情。</h6><p>Win App 的 Netflix 是支持 Dolby Atmos 全景音效的，当然如果影片源只有 Dolby 7.1 和 Dolby 5.1 都会 Tag 给你标出。如果你有支持 Dolby Atmos 的耳机或者音箱你应该会得到更震撼的声音。</p>
-<p><img src="https://sebs.club/hexoBlog/win_atmos.jpeg" alt="Atmos"></p>
-<p>Win 10 上 Netflix HDR 目前只支持10系和更高的N卡，或者 Intel 7代及以后的 集成显卡，A 卡不支持。你可以在系统显示设置里打开 HDR，然后 Netfix 的 Tag 也就有了。可以参看 <a href="https://www.youtube.com/watch?v=Jo1nqQ_f3ME" target="_blank" rel="noopener">Youtube</a> 以及 AMD <a href="https://community.amd.com/thread/236257" target="_blank" rel="noopener">社区的回答</a></p>
-<p><img src="https://sebs.club/hexoBlog/maxresdefault.jpg" alt="HDR"></p>
-<h2 id="盒子和电视"><a href="#盒子和电视" class="headerlink" title="盒子和电视"></a>盒子和电视</h2><p>这里因为设备选择的比较少并且都基本限制死了，只有认证的盒子才能看 Netflix 盒子版本。这里推荐几款自己觉得比较有性价比的。</p>
-<ul>
-<li>Apple TV 4K 全支持！</li>
-<li>mi box s 国际版 能看 4k 不支持 HDR/Dolby Vision 和 Dolby Atmos。</li>
-<li>Nvidia Shield 和 Nvidia Shield Pro 支持 4K 和 HDR</li>
-<li>Xbox One S和 Xbox One X 也全支持（HDR 非 Dolby Vision）。</li>
-<li>Chromecast Ultra 支持 4K 和 Dolby Vision</li>
-<li>Amazon Fire TV 4K Stick 支持 4k 以及 Dolby Vision</li>
-</ul>
-<p>电视当然也得 4K 的才支持 4K，有真的 HDR 才支持 HDR 或者 Dolby Atmos， 及得 HDMI2 和 HDCP 2.2 也是必要条件。音箱也这样。</p>
-<p>参考 Netflix <a href="https://help.netflix.com/en/node/13444" target="_blank" rel="noopener">4K支持列表</a>  <a href="https://help.netflix.com/en/node/42384" target="_blank" rel="noopener">HDR10/Doly Vision支持列表</a>  <a href="https://help.netflix.com/en/node/64066" target="_blank" rel="noopener">Dolby Atmos支持列表</a></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h4 id="Dolby-Atmos"><a href="#Dolby-Atmos" class="headerlink" title="Dolby Atmos"></a>Dolby Atmos</h4><p>Dolby Atmos &gt;  Dolby 7.1 &gt; Dolby 5.1</p>
-<p>Atmos 能给人带来的声音是彻底立体的，而不是 7.1 那种一个圈然后7个平面方位，和一个重低音。Atmos 将声音变为了对象，立体化了。将 7.1 的那个圈平面提升到了立体对象, 将平面的声音感受带到了 3D 立体的声音。这个在声音格式也不一样，如果设备不支持则会自动降级到 7.1/5.1 来播放。可以参看 <a href="https://www.quora.com/What-is-the-difference-between-Dolby-Atmos-and-Dolby-7-1" target="_blank" rel="noopener">Quora的回答</a> 以及  <a href="https://www.dolby.com/us/en/brands/dolby-atmos.html" target="_blank" rel="noopener">Dolby Atmos 官方介绍</a></p>
-<ul>
-<li>Dolby Atmos</li>
-</ul>
-<p><img src="https://sebs.club/hexoBlog/4137.jpg" alt></p>
-<ul>
-<li><p>Dolby 7.1</p>
-<p><img src="https://sebs.club/hexoBlog/image.jpeg" alt></p>
-</li>
-</ul>
-<h4 id="Dolby-Vision-和-HDR-10"><a href="#Dolby-Vision-和-HDR-10" class="headerlink" title="Dolby Vision 和 HDR 10"></a>Dolby Vision 和 HDR 10</h4><p>Dolby Vision &gt; HDR 10</p>
-<p>Dolby Vision 属于 HDR，HDR 10 是开源免费的。Dolby Vision 收费，当然付费了 Dolby 肯定会给你指导，而 HDR 10 肯定就自己来。HDR 10 和 Dolby Vision 最大的区别是 HDR 10 是静态的，Dolby Vision 是动态的 HDR，即随着画面变化会有不同的 HDR 配置有不同的效果。这个在 HDR10+ 上是有的。另外一点  Dolby Vision 支持 12bit 的颜色而 HDR 10 的10就是 10 bit，也就最高支持10bit的了。</p>
-<ul>
-<li>HDR10+ 和 Dolby Vision 理念几乎一样</li>
-</ul>
-<p><img src="https://sebs.club/hexoBlog/hdr-02.jpeg" alt></p>
-<p>其实可以看出 Netflix 限制画质的唯一目的就是保护自己的版权，当然盗版猖獗，对如XX影视等等还是来说无用工。</p>
-<p>这篇文章肯定有很多说的不够详细和正确，但还是希望对你看 Netlflix 有所帮助。以后也会不停修正，也欢迎给出建议和指出错误等。最后希望国产手机重视下 DRM，别让我们连高清视频都看不了。 </p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/4f62cddb.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1104,7 +914,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/03/26/在中国使用-Apple-News/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/8f0cb0d1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -1123,7 +933,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/26/在中国使用-Apple-News/" itemprop="url">
+                <a class="post-title-link" href="/post/8f0cb0d1.html" itemprop="url">
                   在中国使用 Apple News+
                 </a>
               
@@ -1150,12 +960,24 @@
                 
               
 
-              <time title="创建时间：2019-03-26 18:27:26 / 修改时间：18:29:48" itemprop="dateCreated datePublished" datetime="2019-03-26T18:27:26+08:00">2019-03-26</time>
+              <time title="创建时间：2019-03-26 18:27:26" itemprop="dateCreated datePublished" datetime="2019-03-26T18:27:26+08:00">2019-03-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:23:20" itemprop="dateModified" datetime="2019-05-05T19:23:20+08:00">2019-05-05</time>
               
             
           </span>
@@ -1189,35 +1011,15 @@
 
       
         
-          
-            <h1 id="在中国使用-Apple-News"><a href="#在中国使用-Apple-News" class="headerlink" title="在中国使用 Apple News+"></a>在中国使用 Apple News+</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>昨晚苹果的发布会第一个发布的产品就是 Apple News+，News+ 最大的改变就是引入了数百个优秀的杂志：<em>The New Yorker</em>、National Geographic、Time 等等。将原来纸质杂志的优秀的内容以订阅的形式输送到了 Apple 的设备上 iPhone、iPad、Mac，以恰好的 UI 设计让你在屏幕上就能欣赏到这些杂志。</p>
+          <h1 id="在中国使用-Apple-News"><a href="#在中国使用-Apple-News" class="headerlink" title="在中国使用 Apple News+"></a>在中国使用 Apple News+</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>昨晚苹果的发布会第一个发布的产品就是 Apple News+，News+ 最大的改变就是引入了数百个优秀的杂志：<em>The New Yorker</em>、National Geographic、Time 等等。将原来纸质杂志的优秀的内容以订阅的形式输送到了 Apple 的设备上 iPhone、iPad、Mac，以恰好的 UI 设计让你在屏幕上就能欣赏到这些杂志。</p>
 <p><img src="https://sebs.club/hexoBlog/1541339000081.jpg" alt="News+"></p>
-<h2 id="我也想看-Apple-News"><a href="#我也想看-Apple-News" class="headerlink" title="我也想看 Apple News+"></a>我也想看 Apple News+</h2><ol>
-<li><p>首先你需要更新你的 iPhone、iPad 到 iOS 12.2，也就是今天刚发布的新更新。只有新的系统才有 Apple News+。</p>
-<p><img src="https://sebs.club/hexoBlog/photo6111573209502558523.jpg" alt></p>
-</li>
-<li><p>在 设置-通用-语言和地区 里面将 iPhone语言设置为 English，然后 地区/Reagion设置为美国。</p>
-</li>
-</ol>
-<p><img src="https://sebs.club/hexoBlog/photo6111573209502558525.jpg" alt></p>
-<ol start="3">
-<li><p>你的 Apple ID 需要是美区的，如果你没有 美区ID 也可参看我以前写的 <a href="https://mp.weixin.qq.com/s/pNwt5wLnsS7hff2llLU9cw" target="_blank" rel="noopener">如何注册美区ID</a>。代理一定要选择美国的，然后选择全局代理（小火箭这里叫 Proxy/代理 ）。</p>
-<p><img src="https://sebs.club/hexoBlog/photo6111650802381727928.jpg" alt></p>
-</li>
-<li><p>如果使用的是 iPhone  你则需要打开飞行模式然后连接 Wifi，iPad 如果不插卡则不需要这一步。</p>
-<p><img src="https://sebs.club/hexoBlog/photo6111650802381727929.jpg" alt></p>
-</li>
-<li><p>然后就能打开 Apple News，享受新闻了（如果你这样桌面还没有 News app 可以打开商店搜一下）。</p>
-<p><img src="https://sebs.club/hexoBlog/photo6111650802381727930.jpg" alt></p>
-<p>Apple News+ 提供一个月的免费试用，点开杂志就会提示你可以开始免费一个月使用了。这里有点比较麻烦的是如果你没有付款方式是不OK的，国内的用户可以注册 美区 Paypal，美区 Paypal 绑定国内的外币信用卡， 然后将 Apple ID 绑定美区的 Paypal 为付款方式。</p>
-<p><img src="https://sebs.club/hexoBlog/photo6111573209502558535.jpg" alt></p>
-</li>
-</ol>
-<p>比较好的消息是苹果家庭组已经支持 Paypal 的付款方式了，然后 News+ 也是可以家庭共享的。你如果自己付款有麻烦的话可以尝试加入有付款方式朋友的家庭，方便了自己，大家也能省点钱。</p>
-<p><img src="https://sebs.club/hexoBlog/photo6111650802381727931.jpg" alt></p>
-<p>：）如果只想尝试了解下、不想下个月扣费还记得取消订阅。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/8f0cb0d1.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1269,7 +1071,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/03/21/土耳其区-Netflix-注册教程/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/255940e8.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -1288,7 +1090,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/21/土耳其区-Netflix-注册教程/" itemprop="url">
+                <a class="post-title-link" href="/post/255940e8.html" itemprop="url">
                   土耳其区 Netflix 注册教程
                 </a>
               
@@ -1332,7 +1134,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-23 13:52:45" itemprop="dateModified" datetime="2019-03-23T13:52:45+08:00">2019-03-23</time>
+                <time title="修改时间：2019-05-05 19:23:41" itemprop="dateModified" datetime="2019-05-05T19:23:41+08:00">2019-05-05</time>
               
             
           </span>
@@ -1366,25 +1168,15 @@
 
       
         
-          
-            <h1 id="为什么注册土耳其区的-Netflix"><a href="#为什么注册土耳其区的-Netflix" class="headerlink" title="为什么注册土耳其区的 Netflix"></a>为什么注册土耳其区的 Netflix</h1><p>Netflix 观看的内容是由你的代理决定的，即你挂哪个国家/地区的代理就看到哪个区的内容，和注册付款地没有关系。但是各地区套餐价格差距又很大，美区最高级的套餐目前要16刀折合人民币要107左右了，而土耳其最高级的套餐只要40里拉折合人民币只有50左右。所以想省钱肯定都会注册土耳其的。</p>
+          <h1 id="为什么注册土耳其区的-Netflix"><a href="#为什么注册土耳其区的-Netflix" class="headerlink" title="为什么注册土耳其区的 Netflix"></a>为什么注册土耳其区的 Netflix</h1><p>Netflix 观看的内容是由你的代理决定的，即你挂哪个国家/地区的代理就看到哪个区的内容，和注册付款地没有关系。但是各地区套餐价格差距又很大，美区最高级的套餐目前要16刀折合人民币要107左右了，而土耳其最高级的套餐只要40里拉折合人民币只有50左右。所以想省钱肯定都会注册土耳其的。</p>
 <p><img src="https://sebs.club/hexoBlog/Screenshot%20from%202019-03-23%2011-48-47.png" alt="Netflix Price"></p>
-<h1 id="如何注册土耳其区的"><a href="#如何注册土耳其区的" class="headerlink" title="如何注册土耳其区的"></a>如何注册土耳其区的</h1><h4 id="准备土耳其的代理"><a href="#准备土耳其的代理" class="headerlink" title="准备土耳其的代理"></a>准备土耳其的代理</h4><p>一定要用土耳其的代理！不然你注册的肯定不是土耳其区的。Vps 可以考虑下这家 <a href="https://www.hostigger.com/" target="_blank" rel="noopener">hostigger</a>， 链接不带AFF：）。价格很便宜最低每月只需要2刀，虽然速度比较慢，但是我买完试了下注册和观看 Netflix 都是OK的。如果你实在没有土耳其的代理的话可以进我的  <a href="https://t.me/joinchat/DcIwxhNuxv-ycfVHQtBDvg" target="_blank" rel="noopener">Telegram</a> 群组有免费提供。</p>
-<p>挂上代理打开 netflix.com 网页的 url 后面应该是 <strong><a href="https://www.netflix.com/tr-en/" target="_blank" rel="noopener">https://www.netflix.com/tr-en/</a></strong></p>
-<h4 id="准备外币信用卡"><a href="#准备外币信用卡" class="headerlink" title="准备外币信用卡"></a>准备外币信用卡</h4><p>个人使用的是招商银行 MasterCard 信用卡，Visa 也是可以的。学生可以去考虑申请 0 额度的信用卡，或者一些针对学生的信用卡。当然 搜索下 全球付 和 拍住商 这些虚拟信用卡也是可以的。</p>
-<h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><p>由于土耳其区的价格太便宜，这也导致了目前的土耳其区直接注册出现了限制验证土耳其手机号。土耳其的电话验证比较难找，所以就只能曲线救国了。</p>
-<p><img src="https://sebs.club/hexoBlog/Screenshot%20from%202019-03-23%2012-33-05.png" alt="turkey phone"></p>
-<h4 id="使用已注册过的账户"><a href="#使用已注册过的账户" class="headerlink" title="使用已注册过的账户"></a>使用已注册过的账户</h4><p>Netflix 有一个月的免费试用。你如果从没注册过 Netflix 的话可以先去别的区白嫖一个月试用。 然后结束后，账户就是游离状态。再转去土耳其区绑定付款方式。</p>
-<p>我这里登录了一个之前用过的香港区付费的，然后没有续费的了。登录后就会让你完成付款。价格也会改变成39.99 TL 土拉。</p>
-<p><img src="https://sebs.club/hexoBlog/Screenshot%20from%202019-03-23%2012-39-41.png" alt="finish signup"></p>
-<p>这里不需要填号码 选择Continue就OK了！</p>
-<p><img src="https://sebs.club/hexoBlog/Screenshot%20from%202019-03-23%2013-33-19.png" alt="Continue"></p>
-<p>然后就能享受到 Netflix  了， 爱死亡和机器人牛逼！</p>
-<p><img src="https://sebs.club/hexoBlog/Screenshot%20from%202019-03-23%2013-39-30-min.png" alt="Netlfix"></p>
-<h6 id="注"><a href="#注" class="headerlink" title="注"></a>注</h6><p><em>你想立即上的话在别的区绑卡付费找客服立即取消，然后再在土耳其区完成付费也是OK的。最好不要这样做！！！</em></p>
-<p><em>这篇文章介绍的算不算盗版，严格来说算。但又何必老是道德绑架自己绑架别人呢。</em></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/255940e8.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1436,7 +1228,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/03/04/一个管理SS-R-Clash订阅的网站/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/30e6e285.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -1455,7 +1247,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/04/一个管理SS-R-Clash订阅的网站/" itemprop="url">
+                <a class="post-title-link" href="/post/30e6e285.html" itemprop="url">
                   一个管理SS/R V2ray Clash订阅的网站
                 </a>
               
@@ -1482,12 +1274,24 @@
                 
               
 
-              <time title="创建时间：2019-03-04 22:54:22 / 修改时间：23:38:05" itemprop="dateCreated datePublished" datetime="2019-03-04T22:54:22+08:00">2019-03-04</time>
+              <time title="创建时间：2019-03-04 22:54:22" itemprop="dateCreated datePublished" datetime="2019-03-04T22:54:22+08:00">2019-03-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:23:57" itemprop="dateModified" datetime="2019-05-05T19:23:57+08:00">2019-05-05</time>
               
             
           </span>
@@ -1521,8 +1325,7 @@
 
       
         
-          
-            <h2 id="干啥的"><a href="#干啥的" class="headerlink" title="干啥的"></a>干啥的</h2><ul>
+          <h2 id="干啥的"><a href="#干啥的" class="headerlink" title="干啥的"></a>干啥的</h2><ul>
 <li><p>什么是订阅</p>
 <p>大家代理一般用的 ss/r 或者 V2ray，一个节点。当你自己使用多个节点的时候问题就来了，如何方便管理、获取自己的节点。这个时候SSR的作者就提出了订阅的这种方式。第一 url 地址里面存储所有节点信息。每次客户端填写下这个 url 地址就行了。目前 Clash（Win 和 Mac），iOS的 Shadowrocket小火箭、Quantumult 圈， 安卓的 SSR v2rayN、 Win 的 ssr、以及梅林等路由器固件都支持了。非常方便，然后也方便分享。当然如果你是买的机场服务，你肯定已经使用过了。</p>
 </li>
@@ -1530,15 +1333,13 @@
 <p>注册后可以添加 ss/ssr 的节点， 在订阅管理可以看到各种订阅的地址，以及二维码。节点 添加、删除、修改、都是可以的。</p>
 </li>
 </ul>
-<h2 id="网站和开源"><a href="#网站和开源" class="headerlink" title="网站和开源"></a>网站和开源</h2><ul>
-<li>节点的内容是放在我的数据库的，我不开机场，自己的节点也完全够用，我肯定不会窃取你的数据。不放心完全可以自己来全是开源的。</li>
-<li>后端开源地址 <a href="https://github.com/pengchujin/oneSubscribe" target="_blank" rel="noopener">Github</a></li>
-<li>前端开源地址 <a href="https://github.com/pengchujin/subscribeVue" target="_blank" rel="noopener">Github</a></li>
-<li>网站地址 <a href="https://sebs.club" target="_blank" rel="noopener">sebs.club</a></li>
-</ul>
-<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p>推荐大家使用 v2ray tls+ws 这种方式。 可以看下我写的这个docker，使用很方便。<a href="https://github.com/pengchujin/v2rayDocker" target="_blank" rel="noopener">V2rayDocker</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/30e6e285.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1590,7 +1391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/02/27/直播推流/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/d0bed531.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -1609,7 +1410,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/27/直播推流/" itemprop="url">
+                <a class="post-title-link" href="/post/d0bed531.html" itemprop="url">
                   推流Youtube live到国内直播平台
                 </a>
               
@@ -1636,12 +1437,24 @@
                 
               
 
-              <time title="创建时间：2019-02-27 19:44:59 / 修改时间：21:31:56" itemprop="dateCreated datePublished" datetime="2019-02-27T19:44:59+08:00">2019-02-27</time>
+              <time title="创建时间：2019-02-27 19:44:59" itemprop="dateCreated datePublished" datetime="2019-02-27T19:44:59+08:00">2019-02-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:24:40" itemprop="dateModified" datetime="2019-05-05T19:24:40+08:00">2019-05-05</time>
               
             
           </span>
@@ -1675,74 +1488,14 @@
 
       
         
-          
-            <h3 id="要干啥"><a href="#要干啥" class="headerlink" title="要干啥"></a>要干啥</h3><p>由于各种限制，很多直播在国内没有办法播放。科技类的直播也好，还有各种音乐的Live，我自己喜欢看然后希望国内的网友也能比较方便的看到。于是我就想到了将国外的Live实时通过海外服务器推流到国内b站微博直播等平台。我现在就这么干了并且觉得还挺方便。</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
-<li><p>海外的Linux服务器</p>
-</li>
-<li><p>安装 youtube-dl</p>
-<p> 一定要安装最新版本 <a href="https://github.com/rg3/youtube-dl/blob/master/README.md#readme" target="_blank" rel="noopener">Github链接</a> ，youtube-dl 可以获取下载各种主流平台的视频音频</p>
-</li>
-<li><p>安装 ffmpeg </p>
-<p>安装介绍 <a href="https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg" target="_blank" rel="noopener">Github链接</a>，ffmpeg 可以处理视频格式和推流到国内直播接口</p>
-</li>
-<li><p>安装 tmux</p>
-<p>tmux 用来将终端中的任务后台挂起，方便查看修改</p>
-<h4 id="tmux-的基本使用"><a href="#tmux-的基本使用" class="headerlink" title="tmux 的基本使用"></a>tmux 的基本使用</h4><ul>
-<li><p>输入 tmux 即可新建一个后台窗口</p>
-</li>
-<li><p>输入 ctrl + b 然后输入 d 即可离开当前窗口</p>
-</li>
-<li>输入 ctrl + b 然后输入 s 即可查看目前所有后台窗口</li>
-<li>在普通终端输入 tmux attah 即可进入后台终端</li>
-</ul>
-</li>
-<li><p>国内的直播推流地址 （这个后面会详细说）</p>
-</li>
-</ul>
-<h3 id="处理原直播地址"><a href="#处理原直播地址" class="headerlink" title="处理原直播地址"></a>处理原直播地址</h3><p>使用 youtube-dl  -F  加直播地址链接即可查看 比如 95 就代表了 720p 的直播视频</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">➜ youtube-dl -F https://www.youtube.com/watch\?v\=WmutmzNRIx8</span><br><span class="line">[youtube] WmutmzNRIx8: Downloading webpage</span><br><span class="line">[youtube] WmutmzNRIx8: Downloading video info webpage</span><br><span class="line">[youtube] WmutmzNRIx8: Downloading m3u8 information</span><br><span class="line">[youtube] WmutmzNRIx8: Downloading MPD manifest</span><br><span class="line">[info] Available formats <span class="keyword">for</span> WmutmzNRIx8:</span><br><span class="line">format code  extension  resolution note</span><br><span class="line"><span class="number">91</span>           mp4        <span class="number">256</span>x144    HLS  <span class="number">197</span>k , avc1.<span class="number">42</span>c00b, <span class="number">30.0</span>fps, mp4a.<span class="number">40.5</span>@ <span class="number">48</span>k</span><br><span class="line"><span class="number">92</span>           mp4        <span class="number">426</span>x240    HLS  <span class="number">338</span>k , avc1.<span class="number">4</span>d4015, <span class="number">30.0</span>fps, mp4a.<span class="number">40.5</span>@ <span class="number">48</span>k</span><br><span class="line"><span class="number">93</span>           mp4        <span class="number">640</span>x360    HLS  <span class="number">829</span>k , avc1.<span class="number">4</span>d401e, <span class="number">30.0</span>fps, mp4a.<span class="number">40.2</span>@<span class="number">128</span>k</span><br><span class="line"><span class="number">94</span>           mp4        <span class="number">854</span>x480    HLS <span class="number">1380</span>k , avc1.<span class="number">4</span>d401f, <span class="number">30.0</span>fps, mp4a.<span class="number">40.2</span>@<span class="number">128</span>k</span><br><span class="line"><span class="number">95</span>           mp4        <span class="number">1280</span>x720   HLS <span class="number">2593</span>k , avc1.<span class="number">4</span>d401f, <span class="number">30.0</span>fps, mp4a.<span class="number">40.2</span>@<span class="number">256</span>k (best)</span><br></pre></td></tr></table></figure>
-<h3 id="在tmux中-使用脚本推流到国内平台"><a href="#在tmux中-使用脚本推流到国内平台" class="headerlink" title="在tmux中 使用脚本推流到国内平台"></a>在tmux中 使用脚本推流到国内平台</h3><p>我使用的推流脚本， 新建个Live.sh文件填入内容。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> true</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  /usr/local/ffmpeg/ffmpeg -re -i <span class="string">"$(youtube-dl -f 95 -g "</span>https://www.youtube.com/watch?v=yG2gUkEGQFg<span class="string">")"</span> -c:v copy -c:a aac -b:v <span class="number">5000</span>k -ar <span class="number">44100</span> -ab <span class="number">320</span>k -ac <span class="number">2</span> -strict -<span class="number">2</span> -flags +global_header -bsf:a aac_adtstoasc -bufsize <span class="number">3000</span>k -f flv <span class="string">"rtmp://txy.live-send.acg.tv/live-txy/?streamname=live_11544017_6609854&amp;key=9154b3b093a32e50f021a0218f33644b"</span></span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>-f 后面的 95 根据上一步的结果填写有更高清的格式可以自己填写</p>
-</li>
-<li><p>-g 后面双引号里的是原直播地址，也就是上一步中的直播地址。</p>
-</li>
-<li><p>最后双引号里面的是国内直播rtmp地址</p>
-<p><img src="https://sebs.club/hexoBlog/Screenshot%20from%202019-02-27%2020-38-18.png" alt="bilibili"></p>
-<p>bilibili 和 微博的都要拼接即将前后两个复制拼成一段！！！</p>
-</li>
-</ul>
-<h3 id="开始推流"><a href="#开始推流" class="headerlink" title="开始推流"></a>开始推流</h3><ul>
-<li><p>输入 tmux 或者 tmux attach 进入新的窗口</p>
-</li>
-<li><p>./Live.sh 执行推流脚本即可 正常你应该看到这种</p>
-<p><img src="https://sebs.club/hexoBlog/Screenshot%20from%202019-02-27%2020-52-05.png" alt="live"></p>
-</li>
-</ul>
-<h3 id="另外-如何下载-youtube-视频"><a href="#另外-如何下载-youtube-视频" class="headerlink" title="另外 如何下载 youtube 视频"></a>另外 如何下载 youtube 视频</h3><ul>
-<li><p>使用 youtube-dl -F 加链接查看视频格式 youtube 是音频视频分离的上面可以看到 audio only 下面是不不同视频格式</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">➜  blog youtube-dl -F https://youtu.be/<span class="number">5</span>y_sIQTYwHo                                                      </span><br><span class="line">[youtube] <span class="number">5</span>y_sIQTYwHo: Downloading webpage</span><br><span class="line">[youtube] <span class="number">5</span>y_sIQTYwHo: Downloading video info webpage</span><br><span class="line">[info] Available formats <span class="keyword">for</span> <span class="number">5</span>y_sIQTYwHo:</span><br><span class="line">format code  extension  resolution note</span><br><span class="line"><span class="number">249</span>          webm       audio only DASH audio   <span class="number">54</span>k , opus @ <span class="number">50</span>k, <span class="number">1.39</span>MiB</span><br><span class="line"><span class="number">250</span>          webm       audio only DASH audio   <span class="number">72</span>k , opus @ <span class="number">70</span>k, <span class="number">1.82</span>MiB</span><br><span class="line"><span class="number">171</span>          webm       audio only DASH audio  <span class="number">118</span>k , vorbis@<span class="number">128</span>k, <span class="number">3.01</span>MiB</span><br><span class="line"><span class="number">140</span>          m4a        audio only DASH audio  <span class="number">127</span>k , m4a_dash container, mp4a.<span class="number">40.2</span>@<span class="number">128</span>k, <span class="number">3.42</span>MiB</span><br><span class="line"><span class="number">251</span>          webm       audio only DASH audio  <span class="number">138</span>k , opus @<span class="number">160</span>k, <span class="number">3.47</span>MiB</span><br><span class="line"><span class="number">278</span>          webm       <span class="number">256</span>x144    <span class="number">144</span>p  <span class="number">106</span>k , webm container, vp9, <span class="number">15</span>fps, video only, <span class="number">2.53</span>MiB</span><br><span class="line"><span class="number">160</span>          mp4        <span class="number">256</span>x144    <span class="number">144</span>p  <span class="number">112</span>k , avc1.<span class="number">4</span>d400c, <span class="number">30</span>fps, video only, <span class="number">2.50</span>MiB</span><br><span class="line"><span class="number">242</span>          webm       <span class="number">426</span>x240    <span class="number">240</span>p  <span class="number">234</span>k , vp9, <span class="number">30</span>fps, video only, <span class="number">5.34</span>MiB</span><br><span class="line"><span class="number">133</span>          mp4        <span class="number">426</span>x240    <span class="number">240</span>p  <span class="number">246</span>k , avc1.<span class="number">4</span>d4015, <span class="number">30</span>fps, video only, <span class="number">4.98</span>MiB</span><br><span class="line"><span class="number">243</span>          webm       <span class="number">640</span>x360    <span class="number">360</span>p  <span class="number">434</span>k , vp9, <span class="number">30</span>fps, video only, <span class="number">9.65</span>MiB</span><br><span class="line"><span class="number">134</span>          mp4        <span class="number">640</span>x360    <span class="number">360</span>p  <span class="number">636</span>k , avc1.<span class="number">4</span>d401e, <span class="number">30</span>fps, video only, <span class="number">11.36</span>MiB</span><br><span class="line"><span class="number">244</span>          webm       <span class="number">854</span>x480    <span class="number">480</span>p  <span class="number">800</span>k , vp9, <span class="number">30</span>fps, video only, <span class="number">17.45</span>MiB</span><br><span class="line"><span class="number">135</span>          mp4        <span class="number">854</span>x480    <span class="number">480</span>p <span class="number">1194</span>k , avc1.<span class="number">4</span>d401f, <span class="number">30</span>fps, video only, <span class="number">20.94</span>MiB</span><br><span class="line"><span class="number">247</span>          webm       <span class="number">1280</span>x720   <span class="number">720</span>p <span class="number">1594</span>k , vp9, <span class="number">30</span>fps, video only, <span class="number">33.42</span>MiB</span><br><span class="line"><span class="number">136</span>          mp4        <span class="number">1280</span>x720   <span class="number">720</span>p <span class="number">2380</span>k , avc1.<span class="number">4</span>d401f, <span class="number">30</span>fps, video only, <span class="number">36.89</span>MiB</span><br><span class="line"><span class="number">248</span>          webm       <span class="number">1920</span>x1080  <span class="number">1080</span>p <span class="number">2841</span>k , vp9, <span class="number">30</span>fps, video only, <span class="number">59.69</span>MiB</span><br><span class="line"><span class="number">137</span>          mp4        <span class="number">1920</span>x1080  <span class="number">1080</span>p <span class="number">4074</span>k , avc1.<span class="number">640028</span>, <span class="number">30</span>fps, video only, <span class="number">63.09</span>MiB</span><br><span class="line"><span class="number">17</span>           <span class="number">3</span>gp        <span class="number">176</span>x144    small   <span class="number">80</span>k , mp4v.<span class="number">20.3</span>, mp4a.<span class="number">40.2</span>@ <span class="number">24</span>k (<span class="number">22050</span>Hz), <span class="number">2.15</span>MiB</span><br><span class="line"><span class="number">36</span>           <span class="number">3</span>gp        <span class="number">320</span>x180    small  <span class="number">229</span>k , mp4v.<span class="number">20.3</span>, mp4a.<span class="number">40.2</span> (<span class="number">22050</span>Hz), <span class="number">6.18</span>MiB</span><br><span class="line"><span class="number">18</span>           mp4        <span class="number">640</span>x360    medium  <span class="number">663</span>k , avc1.<span class="number">42001</span>E, mp4a.<span class="number">40.2</span>@ <span class="number">96</span>k (<span class="number">44100</span>Hz), <span class="number">17.85</span>MiB (best)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用 youtube-dl -f 视频格式+音频格式 加 youtube链接 即可下载。装了 ffmpeg 即可自动合并音频视频</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">➜  blog youtube-dl -f <span class="number">137</span>+<span class="number">251</span> https://youtu.be/<span class="number">5</span>y_sIQTYwHo  </span><br><span class="line">[youtube] <span class="number">5</span>y_sIQTYwHo: Downloading webpage</span><br><span class="line">[youtube] <span class="number">5</span>y_sIQTYwHo: Downloading video info webpage</span><br><span class="line">WARNING: Requested formats are incompatible <span class="keyword">for</span> merge and will be merged into mkv.</span><br><span class="line">[download] Destination: 馬思唯_MASIWEI - 崂山道士-<span class="number">5</span>y_sIQTYwHo.f137.mp4</span><br><span class="line">[download] <span class="number">100</span>% of <span class="number">63.09</span>MiB <span class="keyword">in</span> <span class="number">00</span>:<span class="number">33</span></span><br><span class="line">[download] Destination: 馬思唯_MASIWEI - 崂山道士-<span class="number">5</span>y_sIQTYwHo.f251.webm</span><br><span class="line">[download] <span class="number">100</span>% of <span class="number">3.47</span>MiB <span class="keyword">in</span> <span class="number">00</span>:<span class="number">03</span></span><br><span class="line">[ffmpeg] Merging formats into <span class="string">"馬思唯_MASIWEI - 崂山道士-5y_sIQTYwHo.mkv"</span></span><br><span class="line">Deleting original file 馬思唯_MASIWEI - 崂山道士-<span class="number">5</span>y_sIQTYwHo.f137.mp4 (pass -k to keep)</span><br><span class="line">Deleting original file 馬思唯_MASIWEI - 崂山道士-<span class="number">5</span>y_sIQTYwHo.f251.webm (pass -k to keep)</span><br></pre></td></tr></table></figure>
-<p>这时候你本地就有了！</p>
-</li>
-<li><h4 id="如何下载视频并加上youtube上的字幕"><a href="#如何下载视频并加上youtube上的字幕" class="headerlink" title="如何下载视频并加上youtube上的字幕"></a>如何下载视频并加上youtube上的字幕</h4><ul>
-<li><p>先查看所有支持的语言字幕 youtube-dl –list-subs + url</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ youtube-dl --list-subs https://www.youtube.com/watch\?v\=JPJjwHAIny4                                   </span><br><span class="line">[youtube] JPJjwHAIny4: Downloading webpage</span><br><span class="line">[youtube] JPJjwHAIny4: Downloading video info webpage</span><br><span class="line">[youtube] JPJjwHAIny4: Looking <span class="keyword">for</span> automatic captions</span><br><span class="line">Available automatic captions <span class="keyword">for</span> JPJjwHAIny4:</span><br><span class="line">Language formats</span><br><span class="line">Available subtitles <span class="keyword">for</span> JPJjwHAIny4:</span><br><span class="line">Language formats</span><br><span class="line">en       vtt, ttml</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>和上一步一样下载视频时添加上字母语言就好了 en 是上步查看到支持字母的语言，这里请自己填好，-f 视频格式上一步说了。</p>
-<p>youtube-dl -f 136+251 –sub-lang en –write-auto-sub URL</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ youtube-dl -f <span class="number">136</span>+<span class="number">251</span> --sub-lang en --write-auto-sub https://www.youtube.com/watch\?v\=JPJjwHAIny4</span><br><span class="line">[youtube] JPJjwHAIny4: Downloading webpage</span><br><span class="line">[youtube] JPJjwHAIny4: Downloading video info webpage</span><br><span class="line">[youtube] JPJjwHAIny4: Looking <span class="keyword">for</span> automatic captions</span><br><span class="line">[info] Writing video subtitles to: Lady Gaga, Bradley Cooper - Shallow (From A Star Is Born_Live From The Oscars)-JPJjwHAIny4.en.vtt</span><br><span class="line">WARNING: Requested formats are incompatible <span class="keyword">for</span> merge and will be merged into mkv.</span><br><span class="line">[download] Destination: Lady Gaga, Bradley Cooper - Shallow (From A Star Is Born_Live From The Oscars)-JPJjwHAIny4.f136.mp4</span><br><span class="line">[download] <span class="number">100</span>% of <span class="number">20.04</span>MiB <span class="keyword">in</span> <span class="number">00</span>:<span class="number">13</span></span><br><span class="line">[download] Destination: Lady Gaga, Bradley Cooper - Shallow (From A Star Is Born_Live From The Oscars)-JPJjwHAIny4.f251.webm</span><br><span class="line">[download] <span class="number">100</span>% of <span class="number">3.85</span>MiB <span class="keyword">in</span> <span class="number">00</span>:<span class="number">04</span></span><br><span class="line">[ffmpeg] Merging formats into <span class="string">"Lady Gaga, Bradley Cooper - Shallow (From A Star Is Born_Live From The Oscars)-JPJjwHAIny4.mkv"</span></span><br><span class="line">Deleting original file Lady Gaga, Bradley Cooper - Shallow (From A Star Is Born_Live From The Oscars)-JPJjwHAIny4.f136.mp4 (pass -k to keep)</span><br><span class="line">Deleting original file Lady Gaga, Bradley Cooper - Shallow (From A Star Is Born_Live From The Oscars)-JPJjwHAIny4.f251.webm (pass -k to keep)</span><br></pre></td></tr></table></figure>
-<p>这样也就好了！</p>
-</li>
-</ul>
-</li>
-</ul>
-
-          
+          <h3 id="要干啥"><a href="#要干啥" class="headerlink" title="要干啥"></a>要干啥</h3><p>由于各种限制，很多直播在国内没有办法播放。科技类的直播也好，还有各种音乐的Live，我自己喜欢看然后希望国内的网友也能比较方便的看到。于是我就想到了将国外的Live实时通过海外服务器推流到国内b站微博直播等平台。我现在就这么干了并且觉得还挺方便。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/d0bed531.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1794,7 +1547,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qust.me/2019/02/18/Clash/">
+    <link itemprop="mainEntityOfPage" href="http://qust.me/post/f129ffb5.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pengchujin">
@@ -1813,7 +1566,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/18/Clash/" itemprop="url">
+                <a class="post-title-link" href="/post/f129ffb5.html" itemprop="url">
                   Clash Win 和 Mac 使用教程
                 </a>
               
@@ -1840,12 +1593,24 @@
                 
               
 
-              <time title="创建时间：2019-02-18 00:50:50 / 修改时间：06:29:36" itemprop="dateCreated datePublished" datetime="2019-02-18T00:50:50+08:00">2019-02-18</time>
+              <time title="创建时间：2019-02-18 00:50:50" itemprop="dateCreated datePublished" datetime="2019-02-18T00:50:50+08:00">2019-02-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 19:24:28" itemprop="dateModified" datetime="2019-05-05T19:24:28+08:00">2019-05-05</time>
               
             
           </span>
@@ -1879,8 +1644,7 @@
 
       
         
-          
-            <h4 id="Win-和-Mac-上最好用的-SS-amp-V2ray-免费客户端"><a href="#Win-和-Mac-上最好用的-SS-amp-V2ray-免费客户端" class="headerlink" title="Win 和 Mac 上最好用的 SS &amp; V2ray 免费客户端"></a>Win 和 Mac 上最好用的 SS &amp; V2ray 免费客户端</h4><p>选择 Clash 作为客户端主要是因为：</p>
+          <h4 id="Win-和-Mac-上最好用的-SS-amp-V2ray-免费客户端"><a href="#Win-和-Mac-上最好用的-SS-amp-V2ray-免费客户端" class="headerlink" title="Win 和 Mac 上最好用的 SS &amp; V2ray 免费客户端"></a>Win 和 Mac 上最好用的 SS &amp; V2ray 免费客户端</h4><p>选择 Clash 作为客户端主要是因为：</p>
 <ol>
 <li>界面UI比较简洁漂亮，Mac 和 Win 基本还能统一。</li>
 <li>支持 ss 和 v2ray</li>
@@ -1888,41 +1652,13 @@
 <li>配置规则可以从远程获取，虽然略麻烦但写好的规则用起来就更方便。</li>
 <li>Win 版本自带 EnableLoopback 方便让 uwp 应用走代理，这也是 Netflix 用户福音。</li>
 </ol>
-<h4 id="下载-amp-安装"><a href="#下载-amp-安装" class="headerlink" title="下载&amp;安装"></a>下载&amp;安装</h4><ul>
-<li>Win 版本 <a href="https://github.com/Fndroid/clash_for_windows_pkg" target="_blank" rel="noopener">Github</a></li>
-<li>Mac 版本  <a href="https://github.com/yichengchen/clashX" target="_blank" rel="noopener">Gihub</a></li>
-</ul>
-<p><img src="https://sebs.club/hexoBlog/835c9d2cd88c6d6a3226da1f555fa81.png" alt="Win Clash"></p>
-<p>下载安装好了推荐打开 System Proxy 和 Auto Launch 系统代理和开机启动。 </p>
-<h4 id="添加配置文件"><a href="#添加配置文件" class="headerlink" title="添加配置文件"></a>添加配置文件</h4><p>Clash 的配置文件和 Surge 类似， 不会配置的可以参考这里  <a href="https://github.com/Hackl0us/SS-Rule-Snippet/wiki/clash(X\" target="_blank" rel="noopener">Clash Rule 规则</a>) 和 <a href="https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/LAZY_RULES/clash.yml" target="_blank" rel="noopener">Yml 文件</a>，推荐将配置的文件放在私有的服务器或者 阿里云的 OSS 等。当然你也可以直接修改本地的 Config.yml 直接使用。</p>
-<p>如果你是从远程获取，选择 Profiles 粘贴上远程 yml 文件地址（记得浏览器打开检查下文件）</p>
-<p><img src="https://sebs.club/hexoBlog/93ac6e73fa504dfccdd96833642dce4.png" alt="Clash add Profiles"></p>
-<p>然后点击 Download 如果获取到了 会提示 Success  这个时候其实就已经应用了。开心的上网吧。</p>
-<p><img src="https://sebs.club/hexoBlog/925a84fba932328e1bb8fbf6b80c659.png" alt="Clash success"></p>
-<p>Mac 这里基本类似，在右上角点击小猫。将 Set as system proxy 勾上，然后在 config - remote Config - set url 填上远程地址。这样 Mac 也可以开心的使用啦。(感谢 Mon$wag 提供的 Mac 截图)</p>
-<p><img src="https://sebs.club/hexoBlog/photo_2019-02-18_05-48-01.jpg" alt="Mac Clash"></p>
-<h4 id="规则的选择"><a href="#规则的选择" class="headerlink" title="规则的选择"></a>规则的选择</h4><ul>
-<li><p>Rule 规则代理模式（推荐日常使用）</p>
-<p><img src="https://sebs.club/hexoBlog/794675b8c35321819b0dbd42704a62e.png" alt="clash rule"></p>
-<p>Rule 在配置文件里写好了的，我这里 配置文件分成了 Proxy普通代理 和  Netlfix 代理的选择。访问 Netflix 可以方便切换线路也节约流量。</p>
-</li>
-<li><p>Globa 全局代理模式</p>
-<p><img src="https://sebs.club/hexoBlog/aad8531d433417c751e8a44b337334e.png" alt="clash global"></p>
-<p>Global 会直接代理所有流量走服务器或者直连，选择 REJECT 会拒绝所有连接也就是不能上网了。</p>
-<p>DIRECT 是所有流量都不走代理直连。</p>
-<p>下面的都是选择不同节点啦，内容都是来自你配置文件的服务器。</p>
-</li>
-<li><p>DIRECT 直连</p>
-<p>和 Global 里一样直连模式，不走代理。</p>
-</li>
-</ul>
-<h4 id="UWP-应用走代理"><a href="#UWP-应用走代理" class="headerlink" title="UWP 应用走代理"></a>UWP 应用走代理</h4><p>目前的版本已经自带 EnableLoopback ，能很简单的 让 win UWP 的应用走代理，对于 Netflix 这样 UWP 能看更高清画质的应用还是有意义的。</p>
-<p><img src="https://sebs.club/hexoBlog/7bf2068dd4d1f3d8a2c6e841301d10e.png" alt="Loopback"></p>
-<p>勾选上你需要走代理的 UWP 应用 Save Changes 保存即可</p>
-<p><img src="https://sebs.club/hexoBlog/11a8d2c9901e57dba42bf98ad575827.png" alt="uwp"></p>
-<p>Clash 除了配置文件需要一定的学习成本外，还是非常非常好用的。特别是对于 Windows 用户来说。不过配置文件也能更好的方便自己，看看自己写写还是值得的。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/f129ffb5.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
