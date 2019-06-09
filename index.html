@@ -286,6 +286,210 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qust.me/post/678ffe99.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pengchujin">
+      <meta itemprop="description" content="复杂的世界里，有你就足够了、">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="酱紫表">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/678ffe99.html" itemprop="url">
+                  Clash 前置智能代理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-09 15:35:12 / 修改时间：15:35:32" itemprop="dateCreated datePublished" datetime="2019-06-09T15:35:12+08:00">2019-06-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/678ffe99.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/post/678ffe99.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/post/678ffe99.html" class="leancloud_visitors" data-flag-title="Clash 前置智能代理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Clash-前置智能代理"><a href="#Clash-前置智能代理" class="headerlink" title="Clash 前置智能代理"></a>Clash 前置智能代理</h1><p>如果你没听过 <a href="https://github.com/Dreamacro/clash" target="_blank" rel="noopener">Clash</a> 的话可以自己搜一下，或者看下我的第一篇 Blog 有介绍。Clash 最大的好处就是能规则代理，可以根据规则来走不同 SS V2ray 节点。这样你就可以让网络按你想走的规则走，比如你想同时用美国的IP看 Youtube 和 Netflix； 英国的IP看 BBC；香港的IP看 HBO Asia 和 TVB 等等。</p>
+<p>Clash 以前都是当客户端使用的，桌面端基本都挺好用的，但是路由器、移动端就有点麻烦。前几天屏蔽的比较厉害很多需要中转，我就想到了把 Clash 当 Server 来代理。Clash 你可以开个 Socks5 的端口连接，很显然这样直接连接非常不安全、也非常容易被墙。</p>
+<p>V2ray 恰好能自定义 Outbound，然后我就尝试 让 V2ray 的 Outbound 去连接 Clash（我放在同一台服务器上），防火墙关闭 Clash 的端口对外。这样就可以 使用 Vmess + Websocket + TLS 来更安全的连接 Clash 前置智能代理了。当然你想用 SS 可以完全OK的。下面我就分享下我的配置：</p>
+<h2 id="Clash-安装配置"><a href="#Clash-安装配置" class="headerlink" title="Clash 安装配置"></a>Clash 安装配置</h2><p>linux 服务器安装 Clash：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -c https://github.com/Dreamacro/clash/releases/download/v0.14.0/clash-linux-amd64-v0.14.0.gz -O clash.0.gz</span><br><span class="line">gunzip clash.0.gz</span><br><span class="line">mv clash.0 /bin/clash</span><br><span class="line">chmod +x /bin/clash</span><br></pre></td></tr></table></figure>
+<p>配置自己的 Clash 文件</p>
+<ul>
+<li>参看 Hackl0us 大佬的配置 <a href="https://github.com/Hackl0us/SS-Rule-Snippet/wiki/clash(X)" target="_blank" rel="noopener">https://github.com/Hackl0us/SS-Rule-Snippet/wiki/clash(X)</a></li>
+</ul>
+<p>输入 Clash 就能启动 Clash，当然你也可以开个 tmux 让 Clash 后台运行，可以这样后台运行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup clash &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="V2ray-安装配置"><a href="#V2ray-安装配置" class="headerlink" title="V2ray 安装配置"></a>V2ray 安装配置</h2><h3 id="如果你想用-SS"><a href="#如果你想用-SS" class="headerlink" title="如果你想用 SS"></a>如果你想用 SS</h3><p>官网安装说的非常详细简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s https://install.direct/go.sh)</span><br></pre></td></tr></table></figure>
+<p>配置文件(outbounds 这里的端口是 Clash默认的  7891 )：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;inbounds&quot;: [ &#123;</span><br><span class="line">    &quot;port&quot;: 1024, </span><br><span class="line">    &quot;protocol&quot;: &quot;shadowsocks&quot;,</span><br><span class="line">    &quot;settings&quot;: &#123;</span><br><span class="line">      &quot;method&quot;: &quot;chacha20&quot;,</span><br><span class="line">      &quot;ota&quot;: false, </span><br><span class="line">      &quot;password&quot;: &quot;sebsclub&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;],</span><br><span class="line">  &quot;outbounds&quot;: [&#123; </span><br><span class="line">    &quot;protocol&quot;: &quot;socks&quot;,</span><br><span class="line">    &quot;settings&quot;: &#123;</span><br><span class="line">      &quot;servers&quot;: [&#123;</span><br><span class="line">      &quot;address&quot;: &quot;127.0.0.1&quot;,</span><br><span class="line">      &quot;port&quot;: 7891,</span><br><span class="line">      &quot;auth&quot;: &quot;noauth&quot;</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后重新启动 V2ray 就 OK</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service v2ray restart</span><br></pre></td></tr></table></figure>
+<h3 id="如果你想用-WS-TLS"><a href="#如果你想用-WS-TLS" class="headerlink" title="如果你想用 WS + TLS"></a>如果你想用 WS + TLS</h3><p>我写了个一键的 V2ray docker 安装</p>
+<ul>
+<li>提前解析好域名</li>
+<li>端口 80 443 记得开放</li>
+<li>自己生成一个 uuid <a href="https://www.uuidgenerator.net/" target="_blank" rel="noopener">在线地址</a></li>
+</ul>
+<p>有三个参数 qust.me 换成自己的域名可以是二级域名，testV2ray 是这个节点的名字随便取。 第三个是自己填的 uuid。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --net=host -v $HOME/.caddy:/root/.caddy  pengchujin/v2ray_clash:0.02 qust.me testV2ray 3f6aefcb-5e47-4324-b0c8-28fd2b43ac96</span><br></pre></td></tr></table></figure>
+<p>跑完之后会显示连接的 配置文件，以及安卓 v2rayNG 和 iOS 小火箭的 二维码，请记得保存。然后你就可以直接退出终端使用了。</p>
+<ul>
+<li>显示正在运行的 Docker</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure>
+<ul>
+<li>停止它（stop 后面填上面那个结果）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker stop</span><br></pre></td></tr></table></figure>
+<p>注：会默认连接本地的 7891 Clash默认的 Socks5（如果不是请保持一致。</p>
+<h2 id="结尾语"><a href="#结尾语" class="headerlink" title="结尾语"></a>结尾语</h2><p>这样第一次干有点麻烦，但是带来的便利却很大。</p>
+<ul>
+<li>爽 智能的代理，手机、电脑或者路由器连接一个节点就能享受到 Clash 的智能代理。</li>
+<li>更安全 走 WS + TLS 应该在目前算最安全的方式之一了。</li>
+<li>实现了中转 因为中间的这台 Server 相当于跳板机，Clash 的配置文件依然能 复用。</li>
+<li>给没有 Clash 的客户端也带来了 Clash </li>
+</ul>
+<p>同时看 香港 HBO 和 英国 BBC 美滋滋</p>
+<p><img src="https://oss.qust.me/img/20190609153058.jpg" alt></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://qust.me/post/2eb95c19.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -332,7 +536,7 @@
                 
               
 
-              <time title="创建时间：2019-05-27 00:32:03 / 修改时间：00:33:18" itemprop="dateCreated datePublished" datetime="2019-05-27T00:32:03+08:00">2019-05-27</time>
+              <time title="创建时间：2019-05-27 00:32:03 / 修改时间：00:49:45" itemprop="dateCreated datePublished" datetime="2019-05-27T00:32:03+08:00">2019-05-27</time>
             
 
             
@@ -1867,193 +2071,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qust.me/post/f129ffb5.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="pengchujin">
-      <meta itemprop="description" content="复杂的世界里，有你就足够了、">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酱紫表">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/f129ffb5.html" itemprop="url">
-                  Clash Win 和 Mac 使用教程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-18 00:50:50" itemprop="dateCreated datePublished" datetime="2019-02-18T00:50:50+08:00">2019-02-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-05 19:25:04" itemprop="dateModified" datetime="2019-05-05T19:25:04+08:00">2019-05-05</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/post/f129ffb5.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/post/f129ffb5.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/post/f129ffb5.html" class="leancloud_visitors" data-flag-title="Clash Win 和 Mac 使用教程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="Win-和-Mac-上最好用的-SS-amp-V2ray-免费客户端"><a href="#Win-和-Mac-上最好用的-SS-amp-V2ray-免费客户端" class="headerlink" title="Win 和 Mac 上最好用的 SS &amp; V2ray 免费客户端"></a>Win 和 Mac 上最好用的 SS &amp; V2ray 免费客户端</h4><p>选择 Clash 作为客户端主要是因为：</p>
-<ol>
-<li>界面UI比较简洁漂亮，Mac 和 Win 基本还能统一。</li>
-<li>支持 ss 和 v2ray</li>
-<li>可以自定义 rule 规则，这点也是最大的优势。能让访问不同的内容走不同的节点，这个对于有 Netflix 或者相关需求的人来说实在太棒了！同时 Captures  也能看到自己访问的路由规则信息。</li>
-<li>配置规则可以从远程获取，虽然略麻烦但写好的规则用起来就更方便。</li>
-<li>Win 版本自带 EnableLoopback 方便让 uwp 应用走代理，这也是 Netflix 用户福音。</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/f129ffb5.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2094,7 +2118,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
