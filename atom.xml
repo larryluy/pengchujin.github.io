@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qust.me/"/>
-  <updated>2019-07-27T12:52:06.003Z</updated>
+  <updated>2019-11-15T17:37:26.320Z</updated>
   <id>https://qust.me/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 DNS 解锁流媒体</title>
+    <link href="https://qust.me/post/20b8d040.html"/>
+    <id>https://qust.me/post/20b8d040.html</id>
+    <published>2019-11-15T17:37:03.000Z</published>
+    <updated>2019-11-15T17:37:26.320Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>YouTube Premium 指南，每月最低仅需3元</title>
